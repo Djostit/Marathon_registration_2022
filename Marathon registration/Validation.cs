@@ -1,20 +1,17 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace Marathon_registration
 {
-    public interface IDataErrorInfo
-    {
-        string Error { get; }
-        string this[string columnName] { get; }
-    }
     internal class Validation : IDataErrorInfo
     {
         public string Name { get; set; }
-        public int Age { get; set; }
+        public string Age { get; set; }
         public string Position { get; set; }
         public string this[string columnName]
         {
@@ -24,17 +21,25 @@ namespace Marathon_registration
                 switch (columnName)
                 {
                     case "Age":
-                        error ="пошел нахуй";
-                        if ((Age < 0) || (Age > 100))
+                        if (Age != null)
                         {
-                            error = "Возраст должен быть больше 0 и меньше 100";
+                            try
+                            {
+                                string check = Age.Split('@')[1];
+                                Debug.WriteLine(Age.Split('@')[0].Length);
+                                if (check != "mail.ru" || Age.Split('@')[0].Length == 0)
+                                {
+                                    error = "Fuck";
+                                }
+                            }
+                            catch { error = "Fuck"; }
                         }
                         break;
                     case "Name":
-                        //Обработка ошибок для свойства Name
+                        
                         break;
                     case "Position":
-                        //Обработка ошибок для свойства Position
+                        
                         break;
                 }
                 return error;

@@ -1,6 +1,7 @@
 ﻿using MaterialDesignThemes.Wpf;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,6 +21,7 @@ namespace Marathon_registration
     /// <summary>
     /// Логика взаимодействия для RegestrationPage.xaml
     /// </summary>
+
 
     public partial class RegestrationPage : Page
     {
