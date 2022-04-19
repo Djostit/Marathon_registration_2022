@@ -100,16 +100,16 @@
                             HorizontalAlignment="Center"
                             Margin="10">
                     <Button
-                        Content="Login"
+                        Content="Войти"
                         Foreground="Gray"
                         FontFamily="Open Sans"
                         FontWeight="Light"
                         Background="LightGray"
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center"
-                        Margin="5"/>
+                        Margin="5" Cursor="Hand"/>
                     <Button
-                        Content="Cancel"
+                        Content="Отмена"
                         Foreground="Gray"
                         FontFamily="Open Sans"
                         FontWeight="Light"
