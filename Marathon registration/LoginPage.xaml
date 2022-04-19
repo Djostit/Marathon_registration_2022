@@ -121,7 +121,7 @@
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center"
                         Margin="5"
-                        Click="ButtonCancel_Click"/>
+                        Click="ButtonCancel_Click" Cursor="Hand"/>
             </StackPanel>
         </StackPanel>
     </Grid>
