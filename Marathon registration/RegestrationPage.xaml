@@ -119,7 +119,15 @@
                              materialDesign:HintAssist.FontFamily="Open Sans"
                              HorizontalContentAlignment="Left"
                              VerticalContentAlignment="Center"
-                             Margin="5"/>
+                             Margin="5" Cursor="Arrow">
+                        <TextBox.Text>
+                            <Binding Path="Age">
+                                <Binding.ValidationRules>
+                                    <ExceptionValidationRule />
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </TextBox.Text>
+                    </TextBox>
                     <PasswordBox x:Name="Password"
                              Width="150"
                              FontFamily="Open Sans"
@@ -235,16 +243,6 @@
                                         Width="100"
                                         materialDesign:HintAssist.Hint="1999.09.09"
                                         materialDesign:CalendarAssist.IsHeaderVisible="True">
-                                <DatePicker.SelectedDate>
-                                    <Binding
-                                        Path="FutureValidatingDate"
-                                        UpdateSourceTrigger="PropertyChanged">
-                                        <Binding.ValidationRules>
-                                            <domain:FutureDateValidationRule
-                                                ValidatesOnTargetUpdated="True" xmlns:domain="clr-namespace:MaterialDesignDemo.Domain" />
-                                        </Binding.ValidationRules>
-                                    </Binding>
-                                </DatePicker.SelectedDate>
                             </DatePicker>
                             <ComboBox FontFamily="Open Sans"
                              Foreground="Gray"

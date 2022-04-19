@@ -66,6 +66,7 @@
     <Compile Include="RegestrationPage.xaml.cs">
       <DependentUpon>RegestrationPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Validation.cs" />
     <Compile Include="WantRun.xaml.cs">
       <DependentUpon>WantRun.xaml</DependentUpon>
     </Compile>

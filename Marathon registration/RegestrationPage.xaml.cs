@@ -20,16 +20,16 @@ namespace Marathon_registration
     /// <summary>
     /// Логика взаимодействия для RegestrationPage.xaml
     /// </summary>
+
     public partial class RegestrationPage : Page
     {
+        Validation Tom;
         public RegestrationPage()
         {
             InitializeComponent();
+            Tom=new Validation();
+            this.DataContext = Tom;
         }
 
-        private void PackIcon_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-
-        }
     }
 }
