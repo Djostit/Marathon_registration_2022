@@ -1,4 +1,5 @@
 ﻿using MaterialDesignThemes.Wpf;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
 
 
 namespace Marathon_registration
@@ -21,17 +23,23 @@ namespace Marathon_registration
     /// <summary>
     /// Логика взаимодействия для RegestrationPage.xaml
     /// </summary>
-
-
     public partial class RegestrationPage : Page
     {
-        Validation Tom;
         public RegestrationPage()
         {
             InitializeComponent();
-            Tom=new Validation();
-            this.DataContext = Tom;
+            this.DataContext = new Validation();
         }
-
+        private void Choice_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog dialog = new();
+            dialog.Title = "Выбор логотипа";
+            dialog.Filter = "Все форматы |*.jpg*;*.jpeg*;*.jpe*;*.png|PNG (*.png*)|*.png|JPEG (*.jpg*,*.jpeg*,*.jpe*)|*.jpg*;*.jpeg*;*.jpe";
+            if (dialog.ShowDialog() == true)
+            {
+                ImageLogo.Source = new BitmapImage(new Uri(dialog.FileName, UriKind.Absolute));
+                TextImage.Text = System.IO.Path.GetFileName(dialog.FileName);
+            }
+        }
     }
 }

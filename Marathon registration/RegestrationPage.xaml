@@ -8,7 +8,6 @@
       d:DesignHeight="450" d:DesignWidth="800"
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       Title="RegestrationPage">
-
     <Grid>
         <DockPanel Background="White">
             <StackPanel Orientation="Horizontal"
@@ -121,14 +120,14 @@
                              VerticalContentAlignment="Center"
                              Margin="5" Cursor="Arrow">
                         <TextBox.Text>
-                            <Binding Path="Age">
+                            <Binding Path="Email">
                                 <Binding.ValidationRules>
                                     <DataErrorValidationRule />
                                 </Binding.ValidationRules>
                             </Binding>
                         </TextBox.Text>
                     </TextBox>
-                    <PasswordBox x:Name="Password"
+                    <TextBox x:Name="Password"
                              Width="150"
                              FontFamily="Open Sans"
                              Foreground="Gray"
@@ -136,7 +135,8 @@
                              materialDesign:HintAssist.FontFamily="Open Sans"
                              HorizontalContentAlignment="Left"
                              VerticalContentAlignment="Center"
-                             Margin="5"/>
+                             Margin="5" Cursor="Arrow">
+                    </TextBox>
                     <PasswordBox x:Name="Retry_Pass"
                              Width="150"
                              FontFamily="Open Sans"
@@ -145,7 +145,15 @@
                              materialDesign:HintAssist.FontFamily="Open Sans"
                                  HorizontalContentAlignment="Left"
                                  VerticalContentAlignment="Center"
-                                 Margin="5"/>
+                                 Margin="5">
+                        <PasswordBox.DataContext>
+                            <Binding Path="Retry_Password">
+                                <Binding.ValidationRules>
+                                    <DataErrorValidationRule />
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </PasswordBox.DataContext>
+                    </PasswordBox>
                     <TextBox x:Name="Name_runner"
                              Width="150"
                              FontFamily="Open Sans"
@@ -154,7 +162,15 @@
                              materialDesign:HintAssist.FontFamily="Open Sans"
                                  HorizontalContentAlignment="Left"
                                  VerticalContentAlignment="Center"
-                             Margin="5"/>
+                             Margin="5">
+                        <TextBox.Text>
+                            <Binding Path="Name">
+                                <Binding.ValidationRules>
+                                    <DataErrorValidationRule />
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </TextBox.Text>
+                    </TextBox>
                     <TextBox x:Name="Last_Name"
                              Width="150"
                              FontFamily="Open Sans"
@@ -163,7 +179,15 @@
                              materialDesign:HintAssist.FontFamily="Open Sans"
                                  HorizontalContentAlignment="Left"
                                  VerticalContentAlignment="Center"
-                             Margin="5"/>
+                             Margin="5">
+                        <TextBox.Text>
+                            <Binding Path="Last_Name">
+                                <Binding.ValidationRules>
+                                    <DataErrorValidationRule />
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </TextBox.Text>
+                    </TextBox>
                     <ComboBox FontFamily="Open Sans"
                               Foreground="Gray"
                              materialDesign:HintAssist.Hint="Мужской"
@@ -183,6 +207,13 @@
                                       Foreground="Gray"
                                       FontFamily="Open Sans"
                                       FontWeight="Light"/>
+                        <ComboBox.SelectedItem>
+                            <Binding Path="Sex">
+                                <Binding.ValidationRules>
+                                    <DataErrorValidationRule />
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </ComboBox.SelectedItem>
                     </ComboBox>
                 </StackPanel>
             </DockPanel>
@@ -191,10 +222,13 @@
                        DockPanel.Dock="Right">
                 <StackPanel HorizontalAlignment="Right"
                             VerticalAlignment="Center">
-                    <Image Width="90"
+                    <Image x:Name="ImageLogo"
+                           Width="90"
                            Height="100"
-                           Source="C:\Users\Djostit\Downloads\free-png.ru-743.png"
-                           Margin="10"/>
+                           Margin="10"
+                           Source="Photo.png"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Right"/>
                     <TextBlock Text=" Фото файла:"
                                Foreground="Gray"
                                FontFamily="Open Sans"
@@ -202,7 +236,8 @@
                                VerticalAlignment="Center"
                                HorizontalAlignment="Left"/>
                     <StackPanel Orientation="Horizontal">
-                        <TextBox Width="150"
+                        <TextBox x:Name="TextImage"
+                             Width="150"
                              FontFamily="Open Sans"
                              Foreground="Gray"
                              materialDesign:HintAssist.Hint="Photo.png"
@@ -211,7 +246,7 @@
                              VerticalContentAlignment="Center"
                              Margin="5"
                              IsReadOnly="True" Cursor="Arrow"/>
-                        <Button
+                        <Button x:Name="Choice"
                         Content="Просмотр..."
                         Foreground="Gray"
                         FontFamily="Open Sans"
@@ -219,7 +254,8 @@
                         Background="LightGray"
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center"
-                        Margin="5"/>
+                        Margin="5"
+                        Click="Choice_Click"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <StackPanel>
@@ -243,6 +279,14 @@
                                         Width="100"
                                         materialDesign:HintAssist.Hint="1999.09.09"
                                         materialDesign:CalendarAssist.IsHeaderVisible="True">
+                                <DatePicker.SelectedDate>
+                                    <Binding Path="SuperTime"
+                                             UpdateSourceTrigger="PropertyChanged">
+                                        <Binding.ValidationRules>
+                                            <DataErrorValidationRule/>
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </DatePicker.SelectedDate>
                             </DatePicker>
                             <ComboBox FontFamily="Open Sans"
                              Foreground="Gray"
@@ -263,6 +307,13 @@
                                       Foreground="Gray"
                                       FontFamily="Open Sans"
                                       FontWeight="Light"/>
+                                <ComboBox.SelectedItem>
+                                    <Binding Path="Country">
+                                        <Binding.ValidationRules>
+                                            <DataErrorValidationRule />
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </ComboBox.SelectedItem>
                             </ComboBox>
                         </StackPanel>
                     </StackPanel>
