@@ -37,5 +37,17 @@ namespace Marathon_registration
             this.NavigationService.Navigate(new LoginPage());
             Data.Value = "Marathon Skills 2022 - Login";
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new AboutPage());
+            Data.Value = "Marathon Skills 2022 - About";
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new SponsorChoice());
+            Data.Value = "Marathon Skills 2022 - Sponsor";
+        }
     }
 }

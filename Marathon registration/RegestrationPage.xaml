@@ -179,7 +179,7 @@
                              materialDesign:HintAssist.FontFamily="Open Sans"
                                  HorizontalContentAlignment="Left"
                                  VerticalContentAlignment="Center"
-                             Margin="5">
+                             Margin="5" Cursor="Arrow">
                         <TextBox.Text>
                             <Binding Path="Last_Name">
                                 <Binding.ValidationRules>
@@ -275,18 +275,18 @@
                                Margin="0,5,0,5"/>
                         </StackPanel>
                         <StackPanel>
-                            <DatePicker x:Name="FutureDatePicker"
+                            <DatePicker x:Name="SuperTime"
                                         Width="100"
-                                        materialDesign:HintAssist.Hint="1999.09.09"
+                                        materialDesign:HintAssist.Hint="09.09.1999"
                                         materialDesign:CalendarAssist.IsHeaderVisible="True">
-                                <DatePicker.SelectedDate>
+                                <DatePicker.DisplayDate>
                                     <Binding Path="SuperTime"
                                              UpdateSourceTrigger="PropertyChanged">
                                         <Binding.ValidationRules>
-                                            <DataErrorValidationRule/>
+                                            <DataErrorValidationRule ValidatesOnTargetUpdated="True"/>
                                         </Binding.ValidationRules>
                                     </Binding>
-                                </DatePicker.SelectedDate>
+                                </DatePicker.DisplayDate>
                             </DatePicker>
                             <ComboBox FontFamily="Open Sans"
                              Foreground="Gray"

@@ -18,6 +18,8 @@ namespace Marathon_registration
         public string Sex { get; set; }
         public string Country { get; set; }
         public DateTime SuperTime { get; set; }
+        public string SponsorName { get; set; }
+        public int Ammount { get; set; }
         public string this[string columnName]
         {
             get
@@ -123,17 +125,53 @@ namespace Marathon_registration
                         }
                         break;
                     case "SuperTime":
-                        if (SuperTime == null)
+                        if (SuperTime == DateTime.MinValue)
                         {
                             error = "Обязательное поле";
                         }
                         else
                         {
-                            if (SuperTime.)
+                            if (SuperTime == DateTime.MinValue)
+                            {
+                                error = "Обязательное поле";
+                            }
+                            int age = DateTime.Now.Year - SuperTime.Year;
+                            if (DateTime.Now.Month < SuperTime.Month || DateTime.Now.Month == SuperTime.Month && DateTime.Now.Day < SuperTime.Day)
+                            {
+                                age--;
+                            }
+                            if (age < 10)
+                            {
+                                error = "Вам меньше 10 лет";
+                            }
+                        }
+                        break;
+                    case "SponsorName":
+                        if(SponsorName == null)
+                        {
+                            error = "Обязательное поле";
+                        }
+                        else
+                        {
+                            if (SponsorName.Length == 0)
                             {
                                 error = "Обязательное поле";
                             }
                         }
+                        break;
+                    case "Ammount":
+                        try
+                        {
+                            if (Ammount < 1)
+                            {
+                                error = "Минимальное пожертвование 1";
+                            }
+                            if (Ammount > 50)
+                            {
+                                error = "Максимальное пожертвование 50";
+                            }
+                        }
+                        catch { error = "Обязательное поле"; }
                         break;
                 }
                 return error;

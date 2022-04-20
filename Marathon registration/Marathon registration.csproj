@@ -58,6 +58,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AboutPage.xaml.cs">
+      <DependentUpon>AboutPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
@@ -67,10 +70,20 @@
     <Compile Include="RegestrationPage.xaml.cs">
       <DependentUpon>RegestrationPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SponsorChoice.xaml.cs">
+      <DependentUpon>SponsorChoice.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SponsorPage.xaml.cs">
+      <DependentUpon>SponsorPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Validation.cs" />
     <Compile Include="WantRun.xaml.cs">
       <DependentUpon>WantRun.xaml</DependentUpon>
     </Compile>
+    <Page Include="AboutPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="LoginPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -92,6 +105,14 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="RegestrationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SponsorChoice.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SponsorPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

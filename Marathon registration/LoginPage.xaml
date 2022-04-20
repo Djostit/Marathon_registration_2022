@@ -74,7 +74,7 @@
                              Width="150"
                              FontFamily="Open Sans"
                              Foreground="Gray"
-                             materialDesign:HintAssist.Hint="Enter your email adress"
+                             materialDesign:HintAssist.Hint="Эл.почта"
                              materialDesign:HintAssist.FontFamily="Open Sans"
                              HorizontalContentAlignment="Center"
                              VerticalContentAlignment="Center"/>
@@ -83,7 +83,7 @@
                             VerticalAlignment="Center"
                             HorizontalAlignment="Center"
                             Margin="5">
-                <TextBlock Text="Password:"
+                <TextBlock Text="Пароль:"
                                Foreground="Gray"
                                FontFamily="Open Sans"
                                FontWeight="Light"
@@ -94,7 +94,7 @@
                              Width="150"
                              FontFamily="Open Sans"
                              Foreground="Gray"
-                             materialDesign:HintAssist.Hint="Enter your password"
+                             materialDesign:HintAssist.Hint="Пароль"
                              materialDesign:HintAssist.FontFamily="Open Sans"
                                  HorizontalContentAlignment="Center"
                                  VerticalContentAlignment="Center"/>
@@ -104,16 +104,16 @@
                             HorizontalAlignment="Center"
                             Margin="10">
                 <Button
-                        Content="Login"
+                        Content="Войти"
                         Foreground="Gray"
                         FontFamily="Open Sans"
                         FontWeight="Light"
                         Background="LightGray"
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center"
-                        Margin="5"/>
+                        Margin="5" Cursor="Hand"/>
                 <Button x:Name="ButtonCancel"
-                        Content="Cancel"
+                        Content="Отмена"
                         Foreground="Gray"
                         FontFamily="Open Sans"
                         FontWeight="Light"

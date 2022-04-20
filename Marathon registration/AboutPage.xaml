@@ -1,0 +1,74 @@
+﻿<Page x:Class="Marathon_registration.AboutPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Marathon_registration"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      Title="AboutPage">
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="44"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal"
+                        Grid.Row="0"
+                        VerticalAlignment="Top"
+                        HorizontalAlignment="Stretch"
+                        Background="#FF505050">
+            <Button Content="Назад"
+                    Foreground="Black"
+                    FontFamily="Open Sans"
+                    FontWeight="Light"
+                    Margin="5"
+                    Background="LightGray"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Command="{x:Static NavigationCommands.BrowseBack}" Cursor="Hand"
+                    Click="Button_Click"/>
+            <TextBlock Text="MARATHON SKILLS 2022"
+                       Margin="5"
+                       Foreground="White"
+                       FontFamily="Open Sans"
+                       FontWeight="SemiBold"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       FontSize="20"/>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" 
+                        Grid.Row="1"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Top">
+            <TextBlock Text="Движение Ворлдскиллс Россия"
+                       Margin="10"
+                       Foreground="Gray"
+                       FontFamily="Open Sans"
+                       FontWeight="SemiBold"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       FontSize="25"/>
+            <ScrollViewer MaxHeight="300"
+                    HorizontalScrollBarVisibility="Disabled"
+                    VerticalScrollBarVisibility="Auto"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center">
+                <TextBlock TextWrapping="Wrap"
+                       Margin="5"
+                       Foreground="Gray"
+                       FontFamily="Open Sans"
+                       FontWeight="Light"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       FontSize="15">
+                    Автономная некоммерческая организация «Агентство развития профессионального мастерства (Ворлдскиллс Россия)» – функциональный преемник Союза «Молодые профессионалы (Ворлдскиллс Россия)». Целью организации является развитие движения Ворлдскиллс в Российской Федерации.<LineBreak/>
+                    Для ее достижения определены ключевые задачи, которые соответствуют поручению Президента РФ: содействие выбору профессии гражданами, в том числе посредством  профессиональных проб с ориентацией на опережающую подготовку  кадров; формирование новой производственной культуры в целях повышения производительности труда; создание социальных лифтов, обеспечивающих  профессиональный и карьерный рост работников, развитие профессиональных и экспертных сообществ; повышение квалификации кадров, включая инженерные и рабочие  профессии и навыки, в том числе путем организации российских и  международных соревнований по профессиональному мастерству; представление Российской Федерации в международных организациях Ворлдскиллс Интернешнл, Ворлдскиллс Европа, а также продвижение передовых стандартов подготовки кадров, включая развитие системы независимой оценки компетенций в России и других странах.<LineBreak/>
+                    Деятельность Агентства синхронизирована с достижением национальных целей. В частности, Ворлдскиллс Россия активно участвует в реализации национальных проектов «Образование», «Демография», «Производительность труда»).<LineBreak/>
+                    Ворлдскиллс Россия сотрудничает с международными организациями, такими как ООН, ЮНЕСКО, Всемирный банк, ОЭСР, ЕАЭС, Деловой совет БРИКС и другими партнерами для реализации проектов в части глобального развития профессиональных навыков и подготовки высококвалифицированных кадров.<LineBreak/>
+                    Ворлдскиллс Россия совместно со странами-партнерами развивает движение в странах ШОС и СНГ. Разрабатываются программы обучения и решения в части развития компетенций и кадров, проведении совместных чемпионатов и тренировок по стандартам WorldSkills.<LineBreak/>
+                </TextBlock>
+            </ScrollViewer>
+        </StackPanel>
+    </Grid>
+</Page>
