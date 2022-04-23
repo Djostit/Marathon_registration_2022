@@ -14,10 +14,6 @@
             <RowDefinition Height="44"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <materialDesign:DialogHost x:Name="Dialog"
-                                   CloseOnClickAway="True">
-            
-        </materialDesign:DialogHost>
         <StackPanel Orientation="Horizontal"
                         Grid.Row="0"
                         VerticalAlignment="Top"
@@ -102,7 +98,7 @@
                 </StackPanel>
                 <StackPanel Margin="0,0,0,25">
                     <TextBox x:Name="SponsorName"
-
+                             PreviewTextInput="SponsorName_PreviewTextInput"
                              Width="75"
                              FontFamily="Open Sans"
                              Foreground="Gray"

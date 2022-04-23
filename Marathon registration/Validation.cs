@@ -20,6 +20,7 @@ namespace Marathon_registration
         public DateTime SuperTime { get; set; }
         public string SponsorName { get; set; }
         public int Ammount { get; set; }
+        public string Photo { get; set; }
         public string this[string columnName]
         {
             get
@@ -62,7 +63,11 @@ namespace Marathon_registration
                         {
                             if (Password.Length == 0)
                             {
-                                error = "Маленький пароль";
+                                error = "Обязательное поле";
+                            }
+                            else if (Password.Length < 6)
+                            {
+                                error = "Некорректный пароль";
                             }
                         }
                         break;
@@ -172,6 +177,16 @@ namespace Marathon_registration
                             }
                         }
                         catch { error = "Обязательное поле"; }
+                        break;
+                    case "Photo":
+                        if (Photo == null)
+                        {
+                            error = "Обязательное поле";
+                        }
+                        else
+                        {
+                            
+                        }
                         break;
                 }
                 return error;

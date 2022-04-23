@@ -129,31 +129,38 @@
                     </TextBox>
                     <TextBox x:Name="Password"
                              Width="150"
-                             FontFamily="Open Sans"
+                             FontFamily="Font/#password"
                              Foreground="Gray"
                              materialDesign:HintAssist.Hint="Пароль"
                              materialDesign:HintAssist.FontFamily="Open Sans"
                              HorizontalContentAlignment="Left"
                              VerticalContentAlignment="Center"
                              Margin="5" Cursor="Arrow">
+                        <TextBox.Text>
+                            <Binding Path="Password">
+                                <Binding.ValidationRules>
+                                    <DataErrorValidationRule/>
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </TextBox.Text>
                     </TextBox>
-                    <PasswordBox x:Name="Retry_Pass"
+                    <TextBox x:Name="Retry_Pass"
                              Width="150"
-                             FontFamily="Open Sans"
+                             FontFamily="Font/#password"
                              Foreground="Gray"
                              materialDesign:HintAssist.Hint="Повторите пароль"
                              materialDesign:HintAssist.FontFamily="Open Sans"
                                  HorizontalContentAlignment="Left"
                                  VerticalContentAlignment="Center"
                                  Margin="5">
-                        <PasswordBox.DataContext>
+                        <TextBox.Text>
                             <Binding Path="Retry_Password">
                                 <Binding.ValidationRules>
                                     <DataErrorValidationRule />
                                 </Binding.ValidationRules>
                             </Binding>
-                        </PasswordBox.DataContext>
-                    </PasswordBox>
+                        </TextBox.Text>
+                    </TextBox>
                     <TextBox x:Name="Name_runner"
                              Width="150"
                              FontFamily="Open Sans"
@@ -245,7 +252,15 @@
                              HorizontalContentAlignment="Left"
                              VerticalContentAlignment="Center"
                              Margin="5"
-                             IsReadOnly="True" Cursor="Arrow"/>
+                             IsReadOnly="True" Cursor="Arrow">
+                            <TextBox.Text>
+                                <Binding Path="Photo">
+                                    <Binding.ValidationRules>
+                                        <DataErrorValidationRule ValidatesOnTargetUpdated="True" />
+                                    </Binding.ValidationRules>
+                                </Binding>
+                            </TextBox.Text>
+                        </TextBox>
                         <Button x:Name="Choice"
                         Content="Просмотр..."
                         Foreground="Gray"
@@ -265,20 +280,21 @@
                                FontWeight="Light"
                                VerticalAlignment="Center"
                                HorizontalAlignment="Right"
-                               Margin="0,5,0,5"/>
+                               Margin="0,10,0,5"/>
                             <TextBlock Text="Страна:"
                                Foreground="Gray"
                                FontFamily="Open Sans"
                                FontWeight="Light"
                                VerticalAlignment="Center"
                                HorizontalAlignment="Right"
-                               Margin="0,5,0,5"/>
+                               Margin="0,12,0,5"/>
                         </StackPanel>
                         <StackPanel>
                             <DatePicker x:Name="SuperTime"
                                         Width="100"
                                         materialDesign:HintAssist.Hint="09.09.1999"
-                                        materialDesign:CalendarAssist.IsHeaderVisible="True">
+                                        materialDesign:CalendarAssist.IsHeaderVisible="True"
+                                        Margin="5">
                                 <DatePicker.DisplayDate>
                                     <Binding Path="SuperTime"
                                              UpdateSourceTrigger="PropertyChanged">

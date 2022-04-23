@@ -34,6 +34,10 @@ namespace Marathon_registration
 
         private void Ammount_TextInput(object sender, TextCompositionEventArgs e)
         {
+            if (Ammount.Text.Contains("0"))
+            {
+                Ammount.Text = "";
+            }
             if (!Char.IsDigit(e.Text, 0))
             {
                 e.Handled = true;
@@ -47,6 +51,14 @@ namespace Marathon_registration
                 Sponsor.SponsorName = SponsorName.Text;
                 Sponsor.Ammount = int.Parse(Ammount.Text);
                 this.NavigationService.Navigate(new SponsorPage());
+            }
+        }
+
+        private void SponsorName_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            if (!Char.IsLetter(e.Text, 0))
+            {
+                e.Handled = true;
             }
         }
     }
