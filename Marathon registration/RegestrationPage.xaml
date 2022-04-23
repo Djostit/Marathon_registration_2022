@@ -253,13 +253,6 @@
                              VerticalContentAlignment="Center"
                              Margin="5"
                              IsReadOnly="True" Cursor="Arrow">
-                            <TextBox.Text>
-                                <Binding Path="Photo">
-                                    <Binding.ValidationRules>
-                                        <DataErrorValidationRule ValidatesOnTargetUpdated="True" />
-                                    </Binding.ValidationRules>
-                                </Binding>
-                            </TextBox.Text>
                         </TextBox>
                         <Button x:Name="Choice"
                         Content="Просмотр..."

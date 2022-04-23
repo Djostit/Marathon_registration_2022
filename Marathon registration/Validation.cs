@@ -17,10 +17,9 @@ namespace Marathon_registration
         public string Last_Name { get; set; }
         public string Sex { get; set; }
         public string Country { get; set; }
-        public DateTime SuperTime { get; set; }
+        public DateTime SuperTime { get; set; } = DateTime.Now;
         public string SponsorName { get; set; }
         public int Ammount { get; set; }
-        public string Photo { get; set; }
         public string this[string columnName]
         {
             get
@@ -177,16 +176,6 @@ namespace Marathon_registration
                             }
                         }
                         catch { error = "Обязательное поле"; }
-                        break;
-                    case "Photo":
-                        if (Photo == null)
-                        {
-                            error = "Обязательное поле";
-                        }
-                        else
-                        {
-                            
-                        }
                         break;
                 }
                 return error;
