@@ -191,7 +191,8 @@
                              materialDesign:HintAssist.FontFamily="Open Sans"
                                  HorizontalContentAlignment="Left"
                                  VerticalContentAlignment="Center"
-                             Margin="5">
+                             Margin="5"
+                             PreviewTextInput="Name_runner_PreviewTextInput">
                         <TextBox.Text>
                             <Binding Path="Name">
                                 <Binding.ValidationRules>
@@ -208,7 +209,8 @@
                              materialDesign:HintAssist.FontFamily="Open Sans"
                                  HorizontalContentAlignment="Left"
                                  VerticalContentAlignment="Center"
-                             Margin="5" Cursor="Arrow">
+                             Margin="5" Cursor="Arrow"
+                             PreviewTextInput="Last_Name_PreviewTextInput">
                         <TextBox.Text>
                             <Binding Path="Last_Name">
                                 <Binding.ValidationRules>
@@ -310,7 +312,9 @@
                                         Width="100"
                                         materialDesign:HintAssist.Hint="09.09.1999"
                                         materialDesign:CalendarAssist.IsHeaderVisible="True"
-                                        Margin="5">
+                                        Margin="5"
+                                        Foreground="Gray"
+                                        PreviewTextInput="SuperTime_PreviewTextInput">
                                 <DatePicker.DisplayDate>
                                     <Binding Path="SuperTime"
                                              UpdateSourceTrigger="PropertyChanged">

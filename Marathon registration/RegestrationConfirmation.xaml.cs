@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,6 +20,7 @@ namespace Marathon_registration
     /// <summary>
     /// Логика взаимодействия для RegestrationConfirmation.xaml
     /// </summary>
+
     public partial class RegestrationConfirmation : Page
     {
         public RegestrationConfirmation()

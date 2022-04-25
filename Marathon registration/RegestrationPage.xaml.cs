@@ -1,8 +1,11 @@
 ﻿using MaterialDesignThemes.Wpf;
 using Microsoft.Win32;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +25,17 @@ namespace Marathon_registration
     /// <summary>
     /// Логика взаимодействия для RegestrationPage.xaml
     /// </summary>
+    public class Runners
+    {
+        public string Email { get; set; }
+        public string Password { get; set; }
+        public string Name { get; set; }
+        public string Last_Name { get; set; }
+        public string Sex { get; set; }
+        public string Birth_Date { get; set; }
+        public string Country { get; set; }
+
+    }
     public partial class RegestrationPage : Page
     {
         public RegestrationPage()
@@ -93,6 +107,45 @@ namespace Marathon_registration
                 SuperTime.Text.Length == 0) { return; }
             this.NavigationService.Navigate(new RegestrationConfirmation());
             Data.Value = "Marathon Skills 2022 - Regestration confirmation";
+            var runner = new Runners()
+            {
+                Email = Login.Text,
+                Password = Password.Text,
+                Name = Name_runner.Text,
+                Last_Name = Last_Name.Text,
+                Sex = Sex.Text,
+                Birth_Date = SuperTime.Text,
+                Country = Country.Text
+            };
+
+            var jsonRunner = JsonConvert.SerializeObject(runner);
+            File.AppendAllText("Recourse/runners.json", jsonRunner);
+
+            Debug.WriteLine(jsonRunner);
+        }
+
+        private void Name_runner_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            if (!Char.IsLetter(e.Text, 0))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void Last_Name_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            if (!Char.IsLetter(e.Text, 0))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void SuperTime_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            if (!Char.IsDigit(e.Text, 0) && e.Text!=".")
+            {
+                e.Handled = true;
+            }
         }
     }
 }
