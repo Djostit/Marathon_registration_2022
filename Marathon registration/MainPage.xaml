@@ -61,7 +61,7 @@
                     Margin="5,20,5,5"
                     Width="350"
                     Click="WantRunButton_Click"
-                    Height="60"/>
+                    Height="60" Cursor="Hand"/>
             <Button Content="Я хочу стать спонсором бегуна"
                     Foreground="Gray"
                     FontFamily="Open Sans"

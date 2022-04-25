@@ -40,5 +40,62 @@ namespace Marathon_registration
                 TextImage.Text = System.IO.Path.GetFileName(dialog.FileName);
             }
         }
+
+        private void ButtonClose_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new MainPage());
+        }
+
+        private void ButtonLogin_Click(object sender, RoutedEventArgs e)
+        {
+            if (Login.Text.Contains('@'))
+            {
+                if (Login.Text.Split('@')[1] != "mail.ru" || Login.Text.Split('@')[0].Length == 0)
+                {
+                    return;
+                }
+            }
+            int a = 0;
+            int b = 0;
+            int c = 0;
+            for (int i = 0; i < Password.Text.Length; i++)
+            {
+                if (Char.IsDigit(Password.Text[i]))
+                {
+                    a++;
+                }
+                if (Char.IsUpper(Password.Text[i]))
+                {
+                    b++;
+                }
+                if (Char.IsSymbol(Password.Text[i]))
+                {
+                    c++;
+                }
+            }
+            //13.04.2022
+            if (SuperTime.Text.Length != 0)
+            {
+                int day = int.Parse(SuperTime.Text.Split('.')[0]);
+                int month = int.Parse(SuperTime.Text.Split('.')[1]);
+                int year = int.Parse(SuperTime.Text.Split('.')[2]);
+                int age = DateTime.Now.Year - year;
+                if (DateTime.Now.Month < month|| DateTime.Now.Month == month && DateTime.Now.Day < day)
+                {
+                    age--;
+                }
+                if (age < 10) { return; }
+            }
+            if (Name_runner.Text.Length == 0 || 
+                Last_Name.Text.Length == 0 || 
+                Retry_Pass.Text != Password.Text || 
+                (a == 0 || b == 0 || c == 0) || 
+                Password.Text.Length < 6 || 
+                Sex.Text.Length == 0 || 
+                Country.Text.Length == 0 ||
+                SuperTime.Text.Length == 0) { return; }
+            this.NavigationService.Navigate(new RegestrationConfirmation());
+            Data.Value = "Marathon Skills 2022 - Regestration confirmation";
+        }
     }
 }

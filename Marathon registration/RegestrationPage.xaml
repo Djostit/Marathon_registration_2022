@@ -195,13 +195,14 @@
                             </Binding>
                         </TextBox.Text>
                     </TextBox>
-                    <ComboBox FontFamily="Open Sans"
-                              Foreground="Gray"
+                    <ComboBox Name="Sex" 
+                             FontFamily="Open Sans"
+                             Foreground="Gray"
                              materialDesign:HintAssist.Hint="Мужской"
                              materialDesign:HintAssist.FontFamily="Open Sans"
                              HorizontalContentAlignment="Left"
                              VerticalContentAlignment="Center"
-                              Margin="5">
+                             Margin="5">
                         <ComboBoxItem Content="Мужской"
                                       Foreground="Gray"
                                       FontFamily="Open Sans"
@@ -297,7 +298,8 @@
                                     </Binding>
                                 </DatePicker.DisplayDate>
                             </DatePicker>
-                            <ComboBox FontFamily="Open Sans"
+                            <ComboBox x:Name="Country"
+                             FontFamily="Open Sans"
                              Foreground="Gray"
                              materialDesign:HintAssist.Hint="Россия"
                              materialDesign:HintAssist.FontFamily="Open Sans"
@@ -332,7 +334,7 @@
                             VerticalAlignment="Bottom"
                             HorizontalAlignment="Left"
                             Margin="10">
-                <Button
+                <Button x:Name="ButtonLogin"
                         Content="Войти"
                         Foreground="Gray"
                         FontFamily="Open Sans"
@@ -340,8 +342,9 @@
                         Background="LightGray"
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center"
-                        Margin="5" Cursor="Hand"/>
-                <Button
+                        Margin="5" Cursor="Hand"
+                        Click="ButtonLogin_Click"/>
+                <Button x:Name="ButtonClose"
                         Content="Отмена"
                         Foreground="Gray"
                         FontFamily="Open Sans"
@@ -349,7 +352,8 @@
                         Background="LightGray"
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center"
-                        Margin="5"/>
+                        Margin="5" Cursor="Hand"
+                        Click="ButtonClose_Click"/>
             </StackPanel>
         </DockPanel>
     </Grid>

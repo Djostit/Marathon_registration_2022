@@ -68,12 +68,34 @@ namespace Marathon_registration
                             {
                                 error = "Некорректный пароль";
                             }
+                            int a = 0;
+                            int b = 0;
+                            int c = 0;
+                            for (int i = 0; i < Password.Length; i++)
+                            {
+                                if (Char.IsDigit(Password[i]))
+                                {
+                                    a++;
+                                }
+                                if (Char.IsUpper(Password[i]))
+                                {
+                                    b++;
+                                }
+                                if (Char.IsSymbol(Password[i]))
+                                {
+                                    c++;
+                                }
+                            }
+                            if (a == 0 || b == 0 || c == 0)
+                            {
+                                error = "Некорректный пароль";
+                            }
                         }
                         break;
                     case "Retry_Password":
                         if (Retry_Password != Password)
                         {
-                            error = "Пахнет наебом";
+                            error = "Пароли не совпадают";
                         }
                         break;
                     case "Name":

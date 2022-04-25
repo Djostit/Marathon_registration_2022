@@ -16,31 +16,24 @@ using System.Windows.Shapes;
 namespace Marathon_registration
 {
     /// <summary>
-    /// Логика взаимодействия для SponsorPage.xaml
+    /// Логика взаимодействия для RegestrationConfirmation.xaml
     /// </summary>
-    class Sponsor
+    public partial class RegestrationConfirmation : Page
     {
-        public static string SponsorName { get; set; }
-        public static int Ammount { get; set; }
-    }
-    public partial class SponsorPage : Page
-    {
-        public SponsorPage()
+        public RegestrationConfirmation()
         {
             InitializeComponent();
-            NameSponsor.Text = Sponsor.SponsorName;
-            Ammount.Text = Sponsor.Ammount.ToString() + "$";
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Data.Value = "Marathon Skills 2022 - Sponsor";
+            this.NavigationService.Navigate(new MainPage());
+            Data.Value = "Marathon Skills 2022";
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new MainPage());
-            Data.Value = "Marathon Skills 2022";
+            Data.Value = "Marathon Skills 2022 - Register as Runner";
         }
     }
 }

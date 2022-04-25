@@ -51,6 +51,7 @@ namespace Marathon_registration
                 Sponsor.SponsorName = SponsorName.Text;
                 Sponsor.Ammount = int.Parse(Ammount.Text);
                 this.NavigationService.Navigate(new SponsorPage());
+                Data.Value = "Marathon Skills 2022 - Sponsor confirmation";
             }
         }
 
@@ -60,6 +61,11 @@ namespace Marathon_registration
             {
                 e.Handled = true;
             }
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            Data.Value = "Marathon Skills 2022";
         }
     }
 }

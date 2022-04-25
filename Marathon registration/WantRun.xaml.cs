@@ -28,6 +28,7 @@ namespace Marathon_registration
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.NavigationService.Navigate(new LoginPage());
+            Data.Value = "Marathon Skills 2022 - Login";
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -38,6 +39,7 @@ namespace Marathon_registration
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             this.NavigationService.Navigate(new RegestrationPage());
+            Data.Value = "Marathon Skills 2022 - Register as Runner";
         }
     }
 }
