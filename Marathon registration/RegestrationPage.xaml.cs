@@ -45,15 +45,12 @@ namespace Marathon_registration
         {
             this.NavigationService.Navigate(new MainPage());
         }
-
+        string[] email_list = { "@mail.ru", "@yandex.ru", "@gmail.com", "@bk.ru", "@outlook.com" };
         private void ButtonLogin_Click(object sender, RoutedEventArgs e)
         {
-            if (Login.Text.Contains('@'))
+            if (Login.Text.Length == 0 || !Login.Text.Contains('@') || Login.Text.Split('@')[0].Length < 2 || !email_list.Contains('@' + Login.Text.Split('@')[1]))
             {
-                if (Login.Text.Split('@')[1] != "mail.ru" || Login.Text.Split('@')[0].Length == 0)
-                {
-                    return;
-                }
+                return;
             }
             int a = 0;
             int b = 0;
@@ -84,7 +81,7 @@ namespace Marathon_registration
                 {
                     age--;
                 }
-                if (age < 10) { return; }
+                if (age < 10 || age > 85) { return; }
             }
             if (Name_runner.Text.Length == 0 || 
                 Last_Name.Text.Length == 0 || 

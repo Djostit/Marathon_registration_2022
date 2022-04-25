@@ -119,6 +119,17 @@
                              HorizontalContentAlignment="Left"
                              VerticalContentAlignment="Center"
                              Margin="5" Cursor="Arrow">
+                        <TextBox.ToolTip>
+                            <ToolTip x:Name="Email_Tool" Placement="Left" 
+                                     Background="LightGray"
+                                     Foreground="Gray"
+                                     BorderBrush="Gray">
+                                <TextBlock>
+                                    Поддерживаемые адреса:<LineBreak/>
+                                    mail.ru, yandex.ru, gmail.com, bk.ru, outlook.com.
+                                </TextBlock>
+                            </ToolTip>
+                        </TextBox.ToolTip>
                         <TextBox.Text>
                             <Binding Path="Email">
                                 <Binding.ValidationRules>
@@ -137,11 +148,14 @@
                              VerticalContentAlignment="Center"
                              Margin="5" Cursor="Arrow">
                         <TextBox.ToolTip>
-                            <ToolTip Placement="Left">
+                            <ToolTip Placement="Left"
+                                     Background="LightGray"
+                                     Foreground="Gray"
+                                     BorderBrush="Gray">
                                 <TextBlock>Минимум 6 символов<LineBreak/>
                                            Минимум 1 прописная буква<LineBreak/>
                                            Минимум 1 цифра<LineBreak/>
-                                           По крайней мере, один из следующих символов: ! @ # $ % ^</TextBlock>
+                                           Минимум 1 символ: ! @ # $ % ^ &amp; * &quot; </TextBlock>
                             </ToolTip>
                         </TextBox.ToolTip>
                         <TextBox.Text>
@@ -343,7 +357,7 @@
                             HorizontalAlignment="Left"
                             Margin="10">
                 <Button x:Name="ButtonLogin"
-                        Content="Войти"
+                        Content="Регистрация"
                         Foreground="Gray"
                         FontFamily="Open Sans"
                         FontWeight="Light"

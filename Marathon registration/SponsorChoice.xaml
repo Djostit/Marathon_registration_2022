@@ -128,6 +128,15 @@
                                  VerticalContentAlignment="Center"
                              Margin="5,5,5,15" Cursor="Arrow"
                              PreviewTextInput="Ammount_TextInput">
+                        <TextBox.ToolTip>
+                            <ToolTip Placement="Left"
+                                     Background="LightGray"
+                                     Foreground="Gray"
+                                     BorderBrush="Gray">
+                                <TextBlock>Минимальная сумма: 1$<LineBreak/>
+                                Максимальная сумма: 50$</TextBlock>
+                            </ToolTip>
+                        </TextBox.ToolTip>
                         <TextBox.Text>
                             <Binding Path="Ammount">
                                 <Binding.ValidationRules>

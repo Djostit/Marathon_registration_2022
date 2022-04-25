@@ -20,6 +20,7 @@ namespace Marathon_registration
         public DateTime SuperTime { get; set; } = DateTime.Now;
         public string SponsorName { get; set; }
         public int Ammount { get; set; }
+        string[] email_list = { "@mail.ru", "@yandex.ru", "@gmail.com", "@bk.ru", "@outlook.com" };
         public string this[string columnName]
         {
             get
@@ -32,25 +33,9 @@ namespace Marathon_registration
                         {
                             error = "Обязательное поле";
                         }
-                        else
+                        else if (Email.Length == 0 || !Email.Contains('@') || Email.Split('@')[0].Length < 2 || !email_list.Contains('@' + Email.Split('@')[1]))
                         {
-                            try
-                            {
-                                if (Email.Split('@')[1] != "mail.ru" || Email.Split('@')[0].Length == 0)
-                                {
-                                    error = "Некорректная почта";
-                                }
-                            }
-                            catch {
-                                if (Email.Length == 0)
-                                {
-                                    error = "Обязательное поле";
-                                }
-                                else
-                                {
-                                    error = "Некорректная почта";
-                                }
-                            }
+                            error = "Некорректная почта";
                         }
                         break;
                     case "Password":
@@ -93,7 +78,11 @@ namespace Marathon_registration
                         }
                         break;
                     case "Retry_Password":
-                        if (Retry_Password != Password)
+                        if (Retry_Password == null)
+                        {
+                            error = "Пароли не совпадают";
+                        }
+                        else if (Retry_Password != Password)
                         {
                             error = "Пароли не совпадают";
                         }
@@ -103,12 +92,9 @@ namespace Marathon_registration
                         {
                             error = "Обязательное поле";
                         }
-                        else
+                        else if (Name.Length == 0)
                         {
-                            if (Name.Length == 0)
-                            {
-                                error = "Обязательное поле";
-                            }
+                            error = "Обязательное поле";
                         }
                         break;
                     case "Last_Name":
@@ -116,12 +102,9 @@ namespace Marathon_registration
                         {
                             error = "Обязательное поле";
                         }
-                        else
+                        else if (Last_Name.Length == 0)
                         {
-                            if (Last_Name.Length == 0)
-                            {
-                                error = "Обязательное поле";
-                            }
+                            error = "Обязательное поле";
                         }
                         break;
                     case "Sex":
@@ -129,12 +112,9 @@ namespace Marathon_registration
                         {
                             error = "Обязательное поле";
                         }
-                        else
+                        else if (Sex.Length == 0)
                         {
-                            if (Sex.Length == 0)
-                            {
-                                error = "Обязательное поле";
-                            }
+                            error = "Обязательное поле";
                         }
                         break;
                     case "Country":
@@ -142,12 +122,9 @@ namespace Marathon_registration
                         {
                             error = "Обязательное поле";
                         }
-                        else
+                        else if (Country.Length == 0)
                         {
-                            if (Country.Length == 0)
-                            {
-                                error = "Обязательное поле";
-                            }
+                            error = "Обязательное поле";
                         }
                         break;
                     case "SuperTime":
@@ -170,19 +147,20 @@ namespace Marathon_registration
                             {
                                 error = "Вам меньше 10 лет";
                             }
+                            else if (age > 85)
+                            {
+                                error = "Вам больше 85 лет";
+                            }
                         }
                         break;
                     case "SponsorName":
-                        if(SponsorName == null)
+                        if (SponsorName == null)
                         {
                             error = "Обязательное поле";
                         }
-                        else
+                        else if (SponsorName.Length == 0)
                         {
-                            if (SponsorName.Length == 0)
-                            {
-                                error = "Обязательное поле";
-                            }
+                            error = "Обязательное поле";
                         }
                         break;
                     case "Ammount":
