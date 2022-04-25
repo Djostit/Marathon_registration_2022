@@ -119,7 +119,7 @@ namespace Marathon_registration
             };
 
             var jsonRunner = JsonConvert.SerializeObject(runner);
-            File.AppendAllText("Recourse/runners.json", jsonRunner);
+            File.AppendAllText("runners.json", jsonRunner);
 
             Debug.WriteLine(jsonRunner);
         }
