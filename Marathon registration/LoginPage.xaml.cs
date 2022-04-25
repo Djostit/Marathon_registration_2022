@@ -23,6 +23,7 @@ namespace Marathon_registration
         public LoginPage()
         {
             InitializeComponent();
+            this.DataContext = new Validation();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

@@ -68,7 +68,7 @@ namespace Marathon_registration
                 {
                     b++;
                 }
-                if (Char.IsSymbol(Password.Text[i]))
+                if (Char.IsSymbol(Password.Text[i]) || Char.IsPunctuation(Password.Text[i]))
                 {
                     c++;
                 }

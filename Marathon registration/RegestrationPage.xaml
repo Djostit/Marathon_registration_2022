@@ -136,6 +136,14 @@
                              HorizontalContentAlignment="Left"
                              VerticalContentAlignment="Center"
                              Margin="5" Cursor="Arrow">
+                        <TextBox.ToolTip>
+                            <ToolTip Placement="Left">
+                                <TextBlock>Минимум 6 символов<LineBreak/>
+                                           Минимум 1 прописная буква<LineBreak/>
+                                           Минимум 1 цифра<LineBreak/>
+                                           По крайней мере, один из следующих символов: ! @ # $ % ^</TextBlock>
+                            </ToolTip>
+                        </TextBox.ToolTip>
                         <TextBox.Text>
                             <Binding Path="Password">
                                 <Binding.ValidationRules>
