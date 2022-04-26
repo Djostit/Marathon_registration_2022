@@ -119,7 +119,7 @@
                             VerticalAlignment="Center"
                             HorizontalAlignment="Center"
                             Margin="10">
-                <Button
+                <Button x:Name="ButtonLogin"
                         Content="Войти"
                         Foreground="Gray"
                         FontFamily="Open Sans"
@@ -127,7 +127,8 @@
                         Background="LightGray"
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center"
-                        Margin="5" Cursor="Hand"/>
+                        Margin="5" Cursor="Hand"
+                        Click="ButtonLogin_Click"/>
                 <Button x:Name="ButtonCancel"
                         Content="Отмена"
                         Foreground="Gray"

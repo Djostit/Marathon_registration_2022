@@ -118,8 +118,11 @@ namespace Marathon_registration
                 Country = Country.Text
             };
 
-            var jsonRunner = JsonConvert.SerializeObject(runner);
-            File.AppendAllText("runners.json", jsonRunner);
+            var jsonRunner = File.ReadAllText("runners.json");
+            var list = JsonConvert.DeserializeObject<List<Runners>>(jsonRunner);
+            list.Add(new Runners{ Email = Login.Text, Password = Password.Text, Name = Name_runner.Text, Last_Name = Last_Name.Text, Sex = Sex.Text, Birth_Date = SuperTime.Text, Country = Country.Text });
+            var convertedJson = JsonConvert.SerializeObject(list, Formatting.Indented);
+            File.WriteAllText("runners.json", convertedJson);
 
             Debug.WriteLine(jsonRunner);
         }
