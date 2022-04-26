@@ -13,20 +13,12 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="44"/>
             <RowDefinition Height="50"/>
-            <RowDefinition Height="105"/>
+            <RowDefinition Height="0.7*"/>
             <RowDefinition Height="35"/>
-            <RowDefinition Height="30"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="50"/>
-            <ColumnDefinition Width="500"/>
-            <ColumnDefinition Width="200"/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
         <StackPanel Orientation="Horizontal"
                         Grid.Row="0"
-                        Grid.ColumnSpan="4"
                         VerticalAlignment="Top"
                         HorizontalAlignment="Stretch"
                         Background="#FF505050">
@@ -49,7 +41,6 @@
                        FontSize="20"/>
         </StackPanel>
         <Button Content="Выйти"
-                    Grid.ColumnSpan="4"
                     Foreground="Black"
                     FontFamily="Open Sans"
                     FontWeight="Light"
@@ -57,9 +48,8 @@
                     Background="LightGray"
                     HorizontalAlignment="Right"
                     VerticalAlignment="Center"
-                    Click="Button_Click"/>
+                    Click="Button_Click" Cursor="Hand"/>
         <TextBlock Grid.Row="1"
-                   Grid.ColumnSpan="4"
                        Text="Управление пользователями"
                        Margin="10,5,10,0"
                        Foreground="Gray"
@@ -69,28 +59,38 @@
                        HorizontalAlignment="Center"
                        FontSize="25"/>
         <Button Grid.Row="2"
-                    Grid.Column="1"
                     Content="&#43; Добавить нового"
                     Foreground="Black"
                     FontFamily="Open Sans"
                     FontWeight="Light"
-                    Margin="5"
+                    Margin="50,5,5,5"
                     Background="LightGray"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
-                    Cursor="Hand"/>
-        <TextBlock Text="Сортировать по:"
-                   Grid.Row="2"
-                   Grid.Column="1"
+                    Cursor="Hand"
+                    Click="Button_Click_1"/>
+        <StackPanel Orientation="Horizontal"
+                    Grid.Row="2"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Right">
+            <StackPanel>
+                <TextBlock Text="Сортировать по:"
                    Foreground="Gray"
                    FontFamily="Open Sans"
                    FontWeight="Light"
                    VerticalAlignment="Top"
                    HorizontalAlignment="Right"
-                   Margin="5"/>
-        <ComboBox Name="Sex"
-                  Grid.Row="2"
-                  Grid.Column="2"
+                   Margin="10"/>
+                <TextBlock Text="Поиск:"
+                   Foreground="Gray"
+                   FontFamily="Open Sans"
+                   FontWeight="Light"
+                   VerticalAlignment="Top"
+                   HorizontalAlignment="Right"
+                   Margin="10"/>
+            </StackPanel>
+            <StackPanel Margin="0,0,50,0">
+                <ComboBox Name="SortBox"
                   FontFamily="Open Sans"
                   Foreground="Gray"
                   materialDesign:HintAssist.Hint="Имени"
@@ -98,29 +98,32 @@
                   HorizontalContentAlignment="Left"
                   VerticalContentAlignment="Top"
                   HorizontalAlignment="Left"
-                  VerticalAlignment="Top">
-            <ComboBoxItem Content="Имени"
+                  VerticalAlignment="Top"
+                  Margin="0,5,5,5"
+                  SelectionChanged="SortBox_SelectionChanged">
+                    <ComboBoxItem Content="Имени"
                           Foreground="Gray"
                           FontFamily="Open Sans"
                           FontWeight="Light"/>
-            <ComboBoxItem Content="Фамилии"
+                    <ComboBoxItem Content="Фамилии"
                           Foreground="Gray"
                           FontFamily="Open Sans"
                           FontWeight="Light"/>
-        </ComboBox>
-        <TextBlock Text="Поиск:"
-                   Grid.Row="2"
-                   Grid.Column="1"
-                   Foreground="Gray"
-                   FontFamily="Open Sans"
-                   FontWeight="Light"
-                   VerticalAlignment="Top"
-                   HorizontalAlignment="Right"
-                   Margin="5,35,5,5"/>
-        <TextBox x:Name="Login"
+                    <ComboBoxItem Content="Эл.почты"
+                          Foreground="Gray"
+                          FontFamily="Open Sans"
+                          FontWeight="Light"/>
+                    <ComboBoxItem Content="Полу"
+                          Foreground="Gray"
+                          FontFamily="Open Sans"
+                          FontWeight="Light"/>
+                    <ComboBoxItem Content="Сбросить"
+                          Foreground="Gray"
+                          FontFamily="Open Sans"
+                          FontWeight="Light"/>
+                </ComboBox>
+                <TextBox x:Name="Search"
                  Width="75"
-                 Grid.Row="2"
-                 Grid.Column="2"
                  FontFamily="Open Sans"
                  Foreground="Gray"
                  materialDesign:HintAssist.Hint="Поиск"
@@ -129,30 +132,74 @@
                  VerticalContentAlignment="Center"
                  HorizontalAlignment="Left"
                  VerticalAlignment="Top"
-                 Margin="0,30,5,5" Cursor="Arrow"/>
-        <Button Grid.Row="2"
-                    Grid.Column="2"
+                 Margin="0,5,5,5"/>
+                <Button VerticalAlignment="Center"
+                    HorizontalAlignment="Right"
                     Content="Обновить"
                     Foreground="Black"
                     FontFamily="Open Sans"
                     FontWeight="Light"
-                    Margin="5"
                     Background="LightGray"
-                    HorizontalAlignment="Left"
-                    VerticalAlignment="Bottom"
-                    Cursor="Hand"/>
-        <TextBlock Grid.Row="3"
-                   Grid.ColumnSpan="4"
-            Text="С вами свяжутся по поводу оплаты"
-                       TextWrapping="Wrap"
-                       Margin="5"
-                       Foreground="Gray"
-                       FontFamily="Open Sans"
-                       FontWeight="Light"
-                       VerticalAlignment="Center"
-                       HorizontalAlignment="Center"
-                       FontSize="15">
+                    Cursor="Hand" Margin="0,5,5,0"
+                        Click="Button_Click_2"/>
+            </StackPanel>
+        </StackPanel>
+        <TextBlock x:Name="Count_Runner"
+                   Grid.Row="3"
+                   Grid.Column="1"
+                   Text="тут текст даты ок да"
+                   TextWrapping="Wrap"
+                   Margin="50,5,5,5"
+                   Foreground="Gray"
+                   FontFamily="Open Sans"
+                   FontWeight="Light"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Left" 
+                   FontSize="15">
         </TextBlock>
-        
+        <DataGrid x:Name="dataGrid"
+                  Grid.Row="4"
+                  Grid.Column="1"
+                  AutoGenerateColumns="False"
+                  Grid.ColumnSpan="2"
+                  HorizontalAlignment="Left"
+                  VerticalAlignment="Top" Margin="50,0,0,0">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Имя">
+                    <DataGridTextColumn.Binding>
+                        <Binding Path="Name"/>
+                    </DataGridTextColumn.Binding>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Фамилия">
+                    <DataGridTextColumn.Binding>
+                        <Binding Path="Last_Name"/>
+                    </DataGridTextColumn.Binding>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Эл.почта">
+                    <DataGridTextColumn.Binding>
+                        <Binding Path="Email"/>
+                    </DataGridTextColumn.Binding>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Пол">
+                    <DataGridTextColumn.Binding>
+                        <Binding Path="Sex"/>
+                    </DataGridTextColumn.Binding>
+                </DataGridTextColumn>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Изменить"
+                                    Foreground="Black"
+                                    FontFamily="Open Sans"
+                                    FontWeight="Light"
+                                    Background="LightGray"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    Margin="5" Cursor="Hand"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Page>

@@ -26,17 +26,12 @@ namespace Marathon_registration
         public RegestrationConfirmation()
         {
             InitializeComponent();
+            Data.Value = "Marathon Skills 2022 - Registration confirmation";
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.NavigationService.Navigate(new MainPage());
-            Data.Value = "Marathon Skills 2022";
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            Data.Value = "Marathon Skills 2022 - Register as Runner";
         }
     }
 }

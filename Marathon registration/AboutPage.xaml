@@ -28,8 +28,7 @@
                     Background="LightGray"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center"
-                    Command="{x:Static NavigationCommands.BrowseBack}" Cursor="Hand"
-                    Click="Button_Click"/>
+                    Command="{x:Static NavigationCommands.BrowseBack}" Cursor="Hand"/>
             <TextBlock Text="MARATHON SKILLS 2022"
                        Margin="5"
                        Foreground="White"

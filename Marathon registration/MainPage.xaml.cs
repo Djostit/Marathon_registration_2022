@@ -24,30 +24,27 @@ namespace Marathon_registration
         {
             InitializeComponent();
             DateTime now = DateTime.Now;
+            Data.Value = "Marathon Skills 2022";
             TextDate.Text = now.ToString("dddd d MMMM yyy");
         }
         private void WantRunButton_Click(object sender, RoutedEventArgs e)
         {
             this.NavigationService.Navigate(new WantRun());
-            Data.Value = "Marathon Skills 2022 - Register as a runner";
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.NavigationService.Navigate(new LoginPage());
-            Data.Value = "Marathon Skills 2022 - Login";
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             this.NavigationService.Navigate(new AboutPage());
-            Data.Value = "Marathon Skills 2022 - About";
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             this.NavigationService.Navigate(new SponsorChoice());
-            Data.Value = "Marathon Skills 2022 - Sponsor";
         }
     }
 }

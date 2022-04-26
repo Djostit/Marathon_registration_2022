@@ -27,20 +27,15 @@ namespace Marathon_registration
         public LoginPage()
         {
             InitializeComponent();
+            Data.Value = "Marathon Skills 2022 - Login";
             this.DataContext = new Validation();
             var jsonRunner = File.ReadAllText("runners.json");
             list = JsonConvert.DeserializeObject<List<Runners>>(jsonRunner);
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            Data.Value = "Marathon Skills 2022";
-        }
-
         private void ButtonCancel_Click(object sender, RoutedEventArgs e)
         {
             this.NavigationService.Navigate(new MainPage());
-            Data.Value = "Marathon Skills 2022";
         }
 
         private void ButtonLogin_Click(object sender, RoutedEventArgs e)

@@ -41,6 +41,7 @@ namespace Marathon_registration
         public RegestrationPage()
         {
             InitializeComponent();
+            Data.Value = "Marathon Skills 2022 - Registrarion";
             this.DataContext = new Validation();
         }
         private void Choice_Click(object sender, RoutedEventArgs e)
@@ -106,17 +107,6 @@ namespace Marathon_registration
                 Country.Text.Length == 0 ||
                 SuperTime.Text.Length == 0) { return; }
             this.NavigationService.Navigate(new RegestrationConfirmation());
-            Data.Value = "Marathon Skills 2022 - Regestration confirmation";
-            var runner = new Runners()
-            {
-                Email = Login.Text,
-                Password = Password.Text,
-                Name = Name_runner.Text,
-                Last_Name = Last_Name.Text,
-                Sex = Sex.Text,
-                Birth_Date = SuperTime.Text,
-                Country = Country.Text
-            };
 
             var jsonRunner = File.ReadAllText("runners.json");
             var list = JsonConvert.DeserializeObject<List<Runners>>(jsonRunner);

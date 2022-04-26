@@ -23,11 +23,7 @@ namespace Marathon_registration
         public AboutPage()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            Data.Value = "Marathon Skills 2022";
+            Data.Value = "Marathon Skills 2022 - About";
         }
     }
 }
