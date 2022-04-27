@@ -121,7 +121,7 @@
                             Margin="10">
                 <Button x:Name="ButtonLogin"
                         Content="Войти"
-                        Foreground="Gray"
+                        Foreground="Black"
                         FontFamily="Open Sans"
                         FontWeight="Light"
                         Background="LightGray"
@@ -131,7 +131,7 @@
                         Click="ButtonLogin_Click"/>
                 <Button x:Name="ButtonCancel"
                         Content="Отмена"
-                        Foreground="Gray"
+                        Foreground="Black"
                         FontFamily="Open Sans"
                         FontWeight="Light"
                         Background="LightGray"

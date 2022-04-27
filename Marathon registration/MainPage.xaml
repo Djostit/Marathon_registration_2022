@@ -51,7 +51,7 @@
                     Grid.Row="1">
             <Button x:Name="WantRunButton"
                     Content="Я хочу стать бегуном"
-                    Foreground="Gray"
+                    Foreground="Black"
                     FontFamily="Open Sans"
                     FontWeight="Light"
                     Background="LightGray"
@@ -63,7 +63,7 @@
                     Click="WantRunButton_Click"
                     Height="60" Cursor="Hand"/>
             <Button Content="Я хочу стать спонсором бегуна"
-                    Foreground="Gray"
+                    Foreground="Black"
                     FontFamily="Open Sans"
                     FontWeight="Light"
                     Background="LightGray"
@@ -75,7 +75,7 @@
                     Height="60"
                     Click="Button_Click_2" Cursor="Hand"/>
             <Button Content="Я хочу узнать больше о событии"
-                    Foreground="Gray"
+                    Foreground="Black"
                     FontFamily="Open Sans"
                     FontWeight="Light"
                     Background="LightGray"
@@ -89,7 +89,7 @@
             
         </StackPanel>
         <Button Content="Войти" Grid.Row="1"
-                    Foreground="Gray"
+                    Foreground="Black"
                     FontFamily="Open Sans"
                     FontWeight="Light"
                     Background="LightGray"

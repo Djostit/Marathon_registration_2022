@@ -246,7 +246,7 @@
                         </TextBox>
                         <Button x:Name="Choice"
                         Content="Просмотр..."
-                        Foreground="Gray"
+                        Foreground="Black"
                         FontFamily="Open Sans"
                         FontWeight="Light"
                         Background="LightGray"
@@ -325,7 +325,7 @@
                             Margin="10">
                 <Button x:Name="ButtonSave"
                         Content="Сохранить"
-                        Foreground="Gray"
+                        Foreground="Black"
                         FontFamily="Open Sans"
                         FontWeight="Light"
                         Background="LightGray"
@@ -335,7 +335,7 @@
                         Click="ButtonSave_Click"/>
                 <Button x:Name="ButtonClose"
                         Content="Отмена"
-                        Foreground="Gray"
+                        Foreground="Black"
                         FontFamily="Open Sans"
                         FontWeight="Light"
                         Background="LightGray"

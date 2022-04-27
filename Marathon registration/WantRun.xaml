@@ -40,7 +40,7 @@
                         VerticalAlignment="Center">
                 <Button
                     Content="Я участвовал ранее"
-                    Foreground="Gray"
+                    Foreground="Black"
                     FontFamily="Open Sans"
                     FontWeight="Light"
                     Background="LightGray"
@@ -53,7 +53,7 @@
                     Click="Button_Click"/>
                 <Button
                     Content="Я новый участник"
-                    Foreground="Gray"
+                    Foreground="Black"
                     FontFamily="Open Sans"
                     FontWeight="Light"
                     Background="LightGray"

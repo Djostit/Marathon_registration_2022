@@ -281,7 +281,7 @@
                         </TextBox>
                         <Button x:Name="Choice"
                         Content="Просмотр..."
-                        Foreground="Gray"
+                        Foreground="Black"
                         FontFamily="Open Sans"
                         FontWeight="Light"
                         Background="LightGray"
@@ -362,7 +362,7 @@
                             Margin="10">
                 <Button x:Name="ButtonLogin"
                         Content="Регистрация"
-                        Foreground="Gray"
+                        Foreground="Black"
                         FontFamily="Open Sans"
                         FontWeight="Light"
                         Background="LightGray"
@@ -372,7 +372,7 @@
                         Click="ButtonLogin_Click"/>
                 <Button x:Name="ButtonClose"
                         Content="Отмена"
-                        Foreground="Gray"
+                        Foreground="Black"
                         FontFamily="Open Sans"
                         FontWeight="Light"
                         Background="LightGray"
