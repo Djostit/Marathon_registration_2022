@@ -79,7 +79,7 @@
                              HorizontalContentAlignment="Center"
                              VerticalContentAlignment="Center">
                     <TextBox.Text>
-                        <Binding Path="Email">
+                        <Binding Path="Last_Name">
                             <Binding.ValidationRules>
                                 <DataErrorValidationRule />
                             </Binding.ValidationRules>

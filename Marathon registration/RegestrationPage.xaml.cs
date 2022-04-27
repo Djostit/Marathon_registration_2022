@@ -34,6 +34,7 @@ namespace Marathon_registration
         public string Sex { get; set; }
         public string Birth_Date { get; set; }
         public string Country { get; set; }
+        public string Photo { get; set; }
 
     }
     public partial class RegestrationPage : Page
@@ -106,11 +107,18 @@ namespace Marathon_registration
                 Sex.Text.Length == 0 || 
                 Country.Text.Length == 0 ||
                 SuperTime.Text.Length == 0) { return; }
+            var jsonRunner = File.ReadAllText("runners.json");
+            List<Runners> list = JsonConvert.DeserializeObject<List<Runners>>(jsonRunner);
+            foreach (var item in list)
+            {
+                if (item.Email.Contains(Login.Text))
+                {
+                    return;
+                }
+            }
             this.NavigationService.Navigate(new RegestrationConfirmation());
 
-            var jsonRunner = File.ReadAllText("runners.json");
-            var list = JsonConvert.DeserializeObject<List<Runners>>(jsonRunner);
-            list.Add(new Runners{ Email = Login.Text, Password = Password.Text, Name = Name_runner.Text, Last_Name = Last_Name.Text, Sex = Sex.Text, Birth_Date = SuperTime.Text, Country = Country.Text });
+            list.Add(new Runners{ Email = Login.Text, Password = Password.Text, Name = Name_runner.Text, Last_Name = Last_Name.Text, Sex = Sex.Text, Birth_Date = SuperTime.Text, Country = Country.Text, Photo = ImageLogo.Source.ToString() });
             var convertedJson = JsonConvert.SerializeObject(list, Formatting.Indented);
             File.WriteAllText("runners.json", convertedJson);
 

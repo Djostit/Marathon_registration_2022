@@ -162,8 +162,14 @@
                   Grid.Column="1"
                   AutoGenerateColumns="False"
                   Grid.ColumnSpan="2"
-                  HorizontalAlignment="Left"
-                  VerticalAlignment="Top" Margin="50,0,0,0">
+                  HorizontalAlignment="Stretch"
+                  VerticalAlignment="Stretch" 
+                  Margin="50,0,50,0"
+                  VerticalContentAlignment="Stretch"
+                  HorizontalContentAlignment="Stretch"
+                  CanUserAddRows="False"
+                  CanUserDeleteRows="False"
+                  IsReadOnly="True">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Имя">
                     <DataGridTextColumn.Binding>
@@ -195,7 +201,8 @@
                                     Background="LightGray"
                                     HorizontalAlignment="Center"
                                     VerticalAlignment="Center"
-                                    Margin="5" Cursor="Hand"/>
+                                    Margin="5" Cursor="Hand"
+                                    Click="Button_Click_3"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>

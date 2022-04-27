@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Diagnostics;
+using System.IO;
+using Newtonsoft.Json;
 
 namespace Marathon_registration
 {
@@ -33,10 +35,24 @@ namespace Marathon_registration
                         {
                             error = "Обязательное поле";
                         }
-                        else if (Email.Length == 0 || !Email.Contains('@') || Email.Split('@')[0].Length < 2 || !email_list.Contains('@' + Email.Split('@')[1]))
+                        else
                         {
-                            error = "Некорректная почта";
+                            var jsonRunner = File.ReadAllText("runners.json");
+                            List<Runners> list = JsonConvert.DeserializeObject<List<Runners>>(jsonRunner);
+                            foreach (var item in list)
+                            {
+                                if (item.Email.Contains(Email))
+                                {
+                                    error = "Почта уже существует";
+                                }
+                            }
+                            if (Email.Length == 0 || !Email.Contains('@') || Email.Split('@')[0].Length < 2 || !email_list.Contains('@' + Email.Split('@')[1]))
+                            {
+                                error = "Некорректная почта";
+                            }   
                         }
+                        
+                        
                         break;
                     case "Password":
                         if (Password == null)

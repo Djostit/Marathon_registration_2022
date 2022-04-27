@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -31,7 +32,7 @@ namespace Marathon_registration
             Data.Value = "Marathon Skills 2022 - Admin Panel";
             jsonRunner = File.ReadAllText("runners.json");
             list = JsonConvert.DeserializeObject<List<Runners>>(jsonRunner);
-
+       
             Count_Runner.Text = $"Всего пользователей: {list.Count}";
             dataGrid.ItemsSource = list;
         }
@@ -63,7 +64,10 @@ namespace Marathon_registration
             }
             else if (Search.Text.Length == 0)
             {
+                var jsonRunner = File.ReadAllText("runners.json");
+                List<Runners> list = JsonConvert.DeserializeObject<List<Runners>>(jsonRunner);
                 dataGrid.ItemsSource = list;
+                dataGrid.UpdateLayout();
             }
         }
 
@@ -91,6 +95,13 @@ namespace Marathon_registration
                     dataGrid.Items.SortDescriptions.Clear();
                     break;
             }
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            var jsonRunner = File.ReadAllText("runners.json");
+            List<Runners> list = JsonConvert.DeserializeObject<List<Runners>>(jsonRunner);
+            this.NavigationService.Navigate(new AdminEditing(list[dataGrid.SelectedIndex].Email, list[dataGrid.SelectedIndex].Password, list[dataGrid.SelectedIndex].Name, list[dataGrid.SelectedIndex].Last_Name, list[dataGrid.SelectedIndex].Sex, list[dataGrid.SelectedIndex].Birth_Date, list[dataGrid.SelectedIndex].Country, list[dataGrid.SelectedIndex].Photo));
         }
     }
 }
