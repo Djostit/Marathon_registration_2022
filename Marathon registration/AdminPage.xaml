@@ -147,7 +147,7 @@
         <TextBlock x:Name="Count_Runner"
                    Grid.Row="3"
                    Grid.Column="1"
-                   Text="тут текст даты ок да"
+                   Text="тут текст"
                    TextWrapping="Wrap"
                    Margin="50,5,5,5"
                    Foreground="Gray"
