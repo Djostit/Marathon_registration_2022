@@ -51,11 +51,11 @@ namespace Marathon_registration
             if (Search.Text.Length != 0)
             {
                 List<Runners> list2 = JsonConvert.DeserializeObject<List<Runners>>(jsonRunner);
+                list2.Clear();
                 foreach (var item in list)
                 {
                     if (item.Name.ToLower().Contains(Search.Text.ToLower()) || item.Last_Name.ToLower().Contains(Search.Text.ToLower()) || item.Email.ToLower().Contains(Search.Text.ToLower()))
                     {
-                        list2.Clear();
                         list2.Add(item);
                     }
                 }
@@ -64,8 +64,10 @@ namespace Marathon_registration
             }
             else if (Search.Text.Length == 0)
             {
+
                 var jsonRunner = File.ReadAllText("runners.json");
                 List<Runners> list = JsonConvert.DeserializeObject<List<Runners>>(jsonRunner);
+                Count_Runner.Text = $"Всего пользователей: {list.Count}";
                 dataGrid.ItemsSource = list;
                 dataGrid.UpdateLayout();
             }
