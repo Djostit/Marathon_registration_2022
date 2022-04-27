@@ -59,7 +59,7 @@ namespace Marathon_registration
             {
                 Email.Text = Email_temp;
                 Password.Text = Password_temp;
-                Name.Text = Name_temp;
+                NameText.Text = Name_temp;
                 Last_Name.Text = Last_Name_temp;
                 Sex.Text = Sex_temp;
                 SuperTime.Text = Date_temp;
@@ -83,7 +83,7 @@ namespace Marathon_registration
                 {
                     item.Email = Email.Text;
                     item.Password = Password.Text;
-                    item.Name = Name.Text;
+                    item.Name = NameText.Text;
                     item.Last_Name = Last_Name.Text;
                     item.Sex = Sex.Text;
                     item.Birth_Date = SuperTime.Text;
@@ -101,7 +101,7 @@ namespace Marathon_registration
         {
             Email.Text = Email_temp;
             Password.Text = Password_temp;
-            Name.Text = Name_temp;
+            NameText.Text = Name_temp;
             Last_Name.Text = Last_Name_temp;
             Sex.Text = Sex_temp;
             SuperTime.Text = Date_temp;

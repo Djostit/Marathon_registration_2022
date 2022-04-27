@@ -37,23 +37,24 @@ namespace Marathon_registration
                         }
                         else
                         {
-                            var jsonRunner = File.ReadAllText("runners.json");
-                            List<Runners> list = JsonConvert.DeserializeObject<List<Runners>>(jsonRunner);
-                            foreach (var item in list)
-                            {
-                                if (item.Email.Contains(Email))
-                                {
-                                    error = "Почта уже существует";
-                                }
-                            }
                             if (Email.Length == 0 || !Email.Contains('@') || Email.Split('@')[0].Length < 2 || !email_list.Contains('@' + Email.Split('@')[1]))
                             {
                                 error = "Некорректная почта";
-                            }   
+                            }
+                            else
+                            {
+                                var jsonRunner = File.ReadAllText("runners.json");
+                                List<Runners> list = JsonConvert.DeserializeObject<List<Runners>>(jsonRunner);
+                                foreach (var item in list)
+                                {
+                                    if (item.Email.Contains(Email))
+                                    {
+                                        error = "Почта уже существует";
+                                    }
+                                }
+                            }
                         }
-                        
-                        
-                        break;
+                     break;
                     case "Password":
                         if (Password == null)
                         {

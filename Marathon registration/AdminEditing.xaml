@@ -113,14 +113,6 @@
                              HorizontalContentAlignment="Left"
                              VerticalContentAlignment="Center"
                              Margin="5" Cursor="Arrow">
-                        
-                        <TextBox.Text>
-                            <Binding Path="Email">
-                                <Binding.ValidationRules>
-                                    <DataErrorValidationRule />
-                                </Binding.ValidationRules>
-                            </Binding>
-                        </TextBox.Text>
                     </TextBox>
                     <TextBox x:Name="Password"
                              Width="150"
@@ -131,26 +123,8 @@
                              HorizontalContentAlignment="Left"
                              VerticalContentAlignment="Center"
                              Margin="5" Cursor="Arrow">
-                        <TextBox.ToolTip>
-                            <ToolTip Placement="Left"
-                                     Background="LightGray"
-                                     Foreground="Gray"
-                                     BorderBrush="Gray">
-                                <TextBlock>Минимум 6 символов<LineBreak/>
-                                           Минимум 1 прописная буква<LineBreak/>
-                                           Минимум 1 цифра<LineBreak/>
-                                           Минимум 1 символ: ! @ # $ % ^ &amp; * &quot;</TextBlock>
-                            </ToolTip>
-                        </TextBox.ToolTip>
-                        <TextBox.Text>
-                            <Binding Path="Password">
-                                <Binding.ValidationRules>
-                                    <DataErrorValidationRule/>
-                                </Binding.ValidationRules>
-                            </Binding>
-                        </TextBox.Text>
                     </TextBox>
-                    <TextBox x:Name="Name"
+                    <TextBox x:Name="NameText"
                              Width="150"
                              FontFamily="Open Sans"
                              Foreground="Gray"
@@ -159,13 +133,6 @@
                                  HorizontalContentAlignment="Left"
                                  VerticalContentAlignment="Center"
                              Margin="5">
-                        <TextBox.Text>
-                            <Binding Path="Name">
-                                <Binding.ValidationRules>
-                                    <DataErrorValidationRule />
-                                </Binding.ValidationRules>
-                            </Binding>
-                        </TextBox.Text>
                     </TextBox>
                     <TextBox x:Name="Last_Name"
                              Width="150"
@@ -176,13 +143,6 @@
                                  HorizontalContentAlignment="Left"
                                  VerticalContentAlignment="Center"
                              Margin="5" Cursor="Arrow">
-                        <TextBox.Text>
-                            <Binding Path="Last_Name">
-                                <Binding.ValidationRules>
-                                    <DataErrorValidationRule />
-                                </Binding.ValidationRules>
-                            </Binding>
-                        </TextBox.Text>
                     </TextBox>
                     <ComboBox Name="Sex" 
                              FontFamily="Open Sans"
@@ -204,13 +164,6 @@
                                       Foreground="Gray"
                                       FontFamily="Open Sans"
                                       FontWeight="Light"/>
-                        <ComboBox.SelectedItem>
-                            <Binding Path="Sex">
-                                <Binding.ValidationRules>
-                                    <DataErrorValidationRule />
-                                </Binding.ValidationRules>
-                            </Binding>
-                        </ComboBox.SelectedItem>
                     </ComboBox>
                 </StackPanel>
             </DockPanel>
@@ -278,14 +231,6 @@
                                         materialDesign:CalendarAssist.IsHeaderVisible="True"
                                         Margin="5"
                                         Foreground="Gray">
-                                <DatePicker.DisplayDate>
-                                    <Binding Path="SuperTime"
-                                             UpdateSourceTrigger="PropertyChanged">
-                                        <Binding.ValidationRules>
-                                            <DataErrorValidationRule ValidatesOnTargetUpdated="True"/>
-                                        </Binding.ValidationRules>
-                                    </Binding>
-                                </DatePicker.DisplayDate>
                             </DatePicker>
                             <ComboBox x:Name="Country"
                              FontFamily="Open Sans"
@@ -307,13 +252,6 @@
                                       Foreground="Gray"
                                       FontFamily="Open Sans"
                                       FontWeight="Light"/>
-                                <ComboBox.SelectedItem>
-                                    <Binding Path="Country">
-                                        <Binding.ValidationRules>
-                                            <DataErrorValidationRule />
-                                        </Binding.ValidationRules>
-                                    </Binding>
-                                </ComboBox.SelectedItem>
                             </ComboBox>
                         </StackPanel>
                     </StackPanel>

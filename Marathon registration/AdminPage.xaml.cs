@@ -64,7 +64,6 @@ namespace Marathon_registration
             }
             else if (Search.Text.Length == 0)
             {
-
                 var jsonRunner = File.ReadAllText("runners.json");
                 List<Runners> list = JsonConvert.DeserializeObject<List<Runners>>(jsonRunner);
                 Count_Runner.Text = $"Всего пользователей: {list.Count}";

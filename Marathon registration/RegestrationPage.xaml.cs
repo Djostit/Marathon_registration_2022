@@ -64,9 +64,21 @@ namespace Marathon_registration
         string[] email_list = { "@mail.ru", "@yandex.ru", "@gmail.com", "@bk.ru", "@outlook.com" };
         private void ButtonLogin_Click(object sender, RoutedEventArgs e)
         {
+            var jsonRunner = File.ReadAllText("runners.json");
+            List<Runners> list = JsonConvert.DeserializeObject<List<Runners>>(jsonRunner);
             if (Login.Text.Length == 0 || !Login.Text.Contains('@') || Login.Text.Split('@')[0].Length < 2 || !email_list.Contains('@' + Login.Text.Split('@')[1]))
             {
                 return;
+            }
+            else
+            {
+                foreach (var item in list)
+                {
+                    if (item.Email.Contains(Login.Text))
+                    {
+                        return;
+                    }
+                }
             }
             int a = 0;
             int b = 0;
@@ -107,22 +119,14 @@ namespace Marathon_registration
                 Sex.Text.Length == 0 || 
                 Country.Text.Length == 0 ||
                 SuperTime.Text.Length == 0) { return; }
-            var jsonRunner = File.ReadAllText("runners.json");
-            List<Runners> list = JsonConvert.DeserializeObject<List<Runners>>(jsonRunner);
-            foreach (var item in list)
-            {
-                if (item.Email.Contains(Login.Text))
-                {
-                    return;
-                }
-            }
+            
             this.NavigationService.Navigate(new RegestrationConfirmation());
 
             list.Add(new Runners{ Email = Login.Text, Password = Password.Text, Name = Name_runner.Text, Last_Name = Last_Name.Text, Sex = Sex.Text, Birth_Date = SuperTime.Text, Country = Country.Text, Photo = ImageLogo.Source.ToString() });
             var convertedJson = JsonConvert.SerializeObject(list, Formatting.Indented);
             File.WriteAllText("runners.json", convertedJson);
 
-            Debug.WriteLine(jsonRunner);
+            //Debug.WriteLine(jsonRunner);
         }
 
         private void Name_runner_PreviewTextInput(object sender, TextCompositionEventArgs e)
