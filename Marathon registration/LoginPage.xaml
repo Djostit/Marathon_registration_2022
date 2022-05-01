@@ -115,6 +115,25 @@
                     </TextBox.Text>
                 </TextBox>
             </StackPanel>
+            <StackPanel Orientation="Vertical"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Center"
+                            Margin="10">
+                <Image x:Name="Captcha"
+                       Width="100"
+                       Height="30"
+                       RenderOptions.BitmapScalingMode="NearestNeighbor"/>
+                <TextBox x:Name="cAPTCHA"
+                             Width="100"
+                             Height="30"
+                             FontFamily="Open Sans"
+                             Foreground="Gray"
+                             materialDesign:HintAssist.Hint="капча"
+                             materialDesign:HintAssist.FontFamily="Open Sans"
+                             HorizontalContentAlignment="Center"
+                             VerticalContentAlignment="Center">
+                </TextBox>
+            </StackPanel>
             <StackPanel Orientation="Horizontal"
                             VerticalAlignment="Center"
                             HorizontalAlignment="Center"

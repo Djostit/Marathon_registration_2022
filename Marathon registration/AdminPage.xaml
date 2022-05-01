@@ -160,6 +160,7 @@
         <DataGrid x:Name="dataGrid"
                   Grid.Row="4"
                   Grid.Column="1"
+                  ColumnWidth="*"
                   AutoGenerateColumns="False"
                   Grid.ColumnSpan="2"
                   HorizontalAlignment="Stretch"
