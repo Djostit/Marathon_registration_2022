@@ -1,0 +1,62 @@
+[
+  {
+    "Email": "admin@bk.ru",
+    "Password": "admin",
+    "Name": "Admin",
+    "Last_Name": "Admin",
+    "Sex": "Ламинат",
+    "Birth_Date": "22.02.2002",
+    "Country": "Россия",
+    "Photo": "pack://application:,,,/Marathon registration;component/Resources/Photo.png"
+  },
+  {
+    "Email": "renat@bk.ru",
+    "Password": "renatNN11@",
+    "Name": "Олег",
+    "Last_Name": "Рыболов",
+    "Sex": "Мужской",
+    "Birth_Date": "01.01.2001",
+    "Country": "Россия",
+    "Photo": "pack://application:,,,/Marathon registration;component/Resources/Photo.png"
+  },
+  {
+    "Email": "uksift@mail.ru",
+    "Password": "qweQWE123!@#",
+    "Name": "Никита",
+    "Last_Name": "Зверев",
+    "Sex": "Мужской",
+    "Birth_Date": "20.02.2002",
+    "Country": "Россия",
+    "Photo": "pack://application:,,,/Marathon registration;component/Resources/Photo.png"
+  },
+  {
+    "Email": "uksift@bk.ru",
+    "Password": "qweQWE123!@#",
+    "Name": "Дмитрий",
+    "Last_Name": "Васильев",
+    "Sex": "Мужской",
+    "Birth_Date": "20.02.2002",
+    "Country": "Россия",
+    "Photo": "pack://application:,,,/Marathon registration;component/Resources/Photo.png"
+  },
+  {
+    "Email": "jkjl@bk.ru",
+    "Password": "qweQWE123!@#",
+    "Name": "Илья",
+    "Last_Name": "Новиков",
+    "Sex": "Мужской",
+    "Birth_Date": "20.02.2002",
+    "Country": "Россия",
+    "Photo": "pack://application:,,,/Marathon registration;component/Resources/Photo.png"
+  },
+  {
+    "Email": "qweqwe@bk.ru",
+    "Password": "qweQWE123!@#",
+    "Name": "Камаль",
+    "Last_Name": "Сарваров",
+    "Sex": "Мужской",
+    "Birth_Date": "20.02.2002",
+    "Country": "Россия",
+    "Photo": "file:///C:/Users/Djostit/Desktop/B_bJsue6hRs копия.png"
+  }
+]

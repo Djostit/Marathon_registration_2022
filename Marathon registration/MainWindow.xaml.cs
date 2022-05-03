@@ -27,6 +27,7 @@ namespace Marathon_registration
     }
     public partial class MainWindow : Window
     {
+        DispatcherTimer timer;
         public MainWindow()
         {
             InitializeComponent();
@@ -35,7 +36,7 @@ namespace Marathon_registration
 
             RestoreButton.Visibility = Visibility.Collapsed;
 
-            DispatcherTimer timer = new DispatcherTimer();
+            timer = new DispatcherTimer();
             timer.Interval = TimeSpan.FromSeconds(1);
             timer.Tick += timerTick;
             timer.Start();   
@@ -74,8 +75,13 @@ namespace Marathon_registration
         }
         private void timerTick(object sender, EventArgs e)
         {
-            DateTime date = new DateTime(2022, 05, 01);
+            DateTime date = new DateTime(2022, 06, 01);
             TimeSpan TimeRemaining = date - DateTime.Now;
+            if (TimeRemaining.Days < 0)
+            {
+                TextDatePanel.Text = "Уже наступило";
+                timer.Stop();
+            } else
             TextDatePanel.Text = $"{TimeRemaining.Days} {getNoun(TimeRemaining.Days, "день", "дня", "дней")} {TimeRemaining.Hours} {getNoun(TimeRemaining.Hours, "час", "часа", "часов")} {TimeRemaining.Minutes} {getNoun(TimeRemaining.Minutes, "минут", "минуты", "минут")} и {TimeRemaining.Seconds} {getNoun(TimeRemaining.Seconds, "секунд", "секунды", "секунд")} до начала марафона!";
         }
 

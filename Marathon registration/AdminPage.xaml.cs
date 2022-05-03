@@ -30,7 +30,7 @@ namespace Marathon_registration
         {
             InitializeComponent();
             Data.Value = "Marathon Skills 2022 - Admin Panel";
-            jsonRunner = File.ReadAllText("runners.json");
+            jsonRunner = File.ReadAllText(System.IO.Path.GetFullPath("Resources/runners.json").Replace(@"\bin\Debug\", @"\"));
             list = JsonConvert.DeserializeObject<List<Runners>>(jsonRunner);
        
             Count_Runner.Text = $"Всего пользователей: {list.Count}";
@@ -64,7 +64,7 @@ namespace Marathon_registration
             }
             else if (Search.Text.Length == 0)
             {
-                var jsonRunner = File.ReadAllText("runners.json");
+                var jsonRunner = File.ReadAllText(System.IO.Path.GetFullPath("Resources/runners.json").Replace(@"\bin\Debug\", @"\"));
                 List<Runners> list = JsonConvert.DeserializeObject<List<Runners>>(jsonRunner);
                 Count_Runner.Text = $"Всего пользователей: {list.Count}";
                 dataGrid.ItemsSource = list;
@@ -100,7 +100,7 @@ namespace Marathon_registration
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-            var jsonRunner = File.ReadAllText("runners.json");
+            var jsonRunner = File.ReadAllText(System.IO.Path.GetFullPath("Resources/runners.json").Replace(@"\bin\Debug\", @"\")); ;
             List<Runners> list = JsonConvert.DeserializeObject<List<Runners>>(jsonRunner);
             this.NavigationService.Navigate(new AdminEditing(list[dataGrid.SelectedIndex].Email, list[dataGrid.SelectedIndex].Password, list[dataGrid.SelectedIndex].Name, list[dataGrid.SelectedIndex].Last_Name, list[dataGrid.SelectedIndex].Sex, list[dataGrid.SelectedIndex].Birth_Date, list[dataGrid.SelectedIndex].Country, list[dataGrid.SelectedIndex].Photo));
         }

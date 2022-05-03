@@ -31,7 +31,7 @@ namespace Marathon_registration
             InitializeComponent();
             Data.Value = "Marathon Skills 2022 - Login";
             this.DataContext = new Validation();
-            var jsonRunner = File.ReadAllText("runners.json");
+            var jsonRunner = File.ReadAllText(System.IO.Path.GetFullPath("Resources/runners.json").Replace(@"\bin\Debug\", @"\"));
             list = JsonConvert.DeserializeObject<List<Runners>>(jsonRunner);
             Captcha.Visibility = Visibility.Collapsed;
             cAPTCHA.Visibility = Visibility.Collapsed;

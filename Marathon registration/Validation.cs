@@ -43,7 +43,7 @@ namespace Marathon_registration
                             }
                             else
                             {
-                                var jsonRunner = File.ReadAllText("runners.json");
+                                var jsonRunner = File.ReadAllText(System.IO.Path.GetFullPath("Resources/runners.json").Replace(@"\bin\Debug\", @"\"));
                                 List<Runners> list = JsonConvert.DeserializeObject<List<Runners>>(jsonRunner);
                                 foreach (var item in list)
                                 {

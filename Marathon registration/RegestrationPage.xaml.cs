@@ -64,7 +64,7 @@ namespace Marathon_registration
         string[] email_list = { "@mail.ru", "@yandex.ru", "@gmail.com", "@bk.ru", "@outlook.com" };
         private void ButtonLogin_Click(object sender, RoutedEventArgs e)
         {
-            var jsonRunner = File.ReadAllText("runners.json");
+            var jsonRunner = File.ReadAllText(System.IO.Path.GetFullPath("Resources/runners.json").Replace(@"\bin\Debug\", @"\"));
             List<Runners> list = JsonConvert.DeserializeObject<List<Runners>>(jsonRunner);
             if (Login.Text.Length == 0 || !Login.Text.Contains('@') || Login.Text.Split('@')[0].Length < 2 || !email_list.Contains('@' + Login.Text.Split('@')[1]))
             {
@@ -124,7 +124,7 @@ namespace Marathon_registration
 
             list.Add(new Runners{ Email = Login.Text, Password = Password.Text, Name = Name_runner.Text, Last_Name = Last_Name.Text, Sex = Sex.Text, Birth_Date = SuperTime.Text, Country = Country.Text, Photo = ImageLogo.Source.ToString() });
             var convertedJson = JsonConvert.SerializeObject(list, Formatting.Indented);
-            File.WriteAllText("runners.json", convertedJson);
+            File.WriteAllText(System.IO.Path.GetFullPath("Resources/runners.json").Replace(@"\bin\Debug\", @"\"), convertedJson);
 
             //Debug.WriteLine(jsonRunner);
         }

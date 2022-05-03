@@ -258,7 +258,8 @@
                            Width="90"
                            Height="100"
                            Margin="10"
-                           Source="Photo.png"
+                           Source="Resources\Photo.png"
+                           Stretch="UniformToFill"
                            VerticalAlignment="Center"
                            HorizontalAlignment="Right"/>
                     <TextBlock Text=" Фото файла:"
