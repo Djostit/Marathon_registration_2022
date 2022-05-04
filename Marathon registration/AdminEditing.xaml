@@ -205,7 +205,8 @@
                         Background="LightGray"
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center"
-                        Margin="5"/>
+                        Click="Choice_Click"
+                        Margin="5" Cursor="Hand"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <StackPanel>

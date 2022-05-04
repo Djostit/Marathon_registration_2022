@@ -45,15 +45,18 @@ namespace Marathon_registration
             Data.Value = "Marathon Skills 2022 - Registrarion";
             this.DataContext = new Validation();
         }
+        OpenFileDialog dialog = new();
+        bool check = false;
         private void Choice_Click(object sender, RoutedEventArgs e)
         {
-            OpenFileDialog dialog = new();
+            dialog = new();
             dialog.Title = "Выбор логотипа";
             dialog.Filter = "Все форматы |*.jpg*;*.jpeg*;*.jpe*;*.png|PNG (*.png*)|*.png|JPEG (*.jpg*,*.jpeg*,*.jpe*)|*.jpg*;*.jpeg*;*.jpe";
             if (dialog.ShowDialog() == true)
             {
                 ImageLogo.Source = new BitmapImage(new Uri(dialog.FileName, UriKind.Absolute));
                 TextImage.Text = System.IO.Path.GetFileName(dialog.FileName);
+                check = true;
             }
         }
 
@@ -121,9 +124,14 @@ namespace Marathon_registration
                 SuperTime.Text.Length == 0) { return; }
             
             this.NavigationService.Navigate(new RegestrationConfirmation());
-
+            if (check)
+            {
+                File.Copy(dialog.FileName, $"{System.IO.Path.GetFullPath("User photos/").Replace(@"\bin\Debug\", @"\")}{System.IO.Path.GetFileName(dialog.FileName)}");
+                ImageLogo.Source = new BitmapImage(new Uri($"{System.IO.Path.GetFullPath("User photos/").Replace(@"\bin\Debug\", @"\")}{System.IO.Path.GetFileName(dialog.FileName)}", UriKind.RelativeOrAbsolute));
+            }
             list.Add(new Runners{ Email = Login.Text, Password = Password.Text, Name = Name_runner.Text, Last_Name = Last_Name.Text, Sex = Sex.Text, Birth_Date = SuperTime.Text, Country = Country.Text, Photo = ImageLogo.Source.ToString() });
             var convertedJson = JsonConvert.SerializeObject(list, Formatting.Indented);
+
             File.WriteAllText(System.IO.Path.GetFullPath("Resources/runners.json").Replace(@"\bin\Debug\", @"\"), convertedJson);
 
             //Debug.WriteLine(jsonRunner);

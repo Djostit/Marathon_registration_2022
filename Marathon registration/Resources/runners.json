@@ -17,7 +17,7 @@
     "Sex": "Мужской",
     "Birth_Date": "01.01.2001",
     "Country": "Россия",
-    "Photo": "pack://application:,,,/Marathon registration;component/Resources/Photo.png"
+    "Photo": "file:///C:/Users/djost/source/repos/Djostit/Marathon-registration/Marathon registration/User photos/aBMwpva8OVX9nkPqhacTGoZ0xkAgY80PUN68voB1AaY2iOmHBH6P8vwHuDqjM_sJP0zV-65tdFUCcdKs6hWdwspV.jpg"
   },
   {
     "Email": "uksift@mail.ru",
@@ -57,6 +57,16 @@
     "Sex": "Мужской",
     "Birth_Date": "20.02.2002",
     "Country": "Россия",
-    "Photo": "file:///C:/Users/Djostit/Desktop/B_bJsue6hRs копия.png"
+    "Photo": "file:///C:/Users/djost/source/repos/Djostit/Marathon-registration/Marathon registration/User photos/1639687948_145-catherineasquithgallery-com-p-rozovie-smailiki-aifon-175.png"
+  },
+  {
+    "Email": "amin@bk.ru",
+    "Password": "asdASD62&*2",
+    "Name": "Амин",
+    "Last_Name": "Вальков",
+    "Sex": "Мужской",
+    "Birth_Date": "27.08.2004",
+    "Country": "Россия",
+    "Photo": "file:///C:/Users/djost/source/repos/Djostit/Marathon-registration/Marathon registration/User photos/gPHxQZOWqYeosMJkq4HcaaElJz1e2SNiE8YXXxwDiDic9AwhQYA7y0syPXxKjKgNv5eOaZmVCxvvUCDEwsMSzHVz.jpg"
   }
 ]

@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Microsoft.Win32;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -72,11 +73,33 @@ namespace Marathon_registration
                 timer.Stop();
             }
         }
-
+        OpenFileDialog dialog = new();
+        bool check = false;
+        private void Choice_Click(object sender, RoutedEventArgs e)
+        {
+            dialog = new();
+            dialog.Title = "Выбор логотипа";
+            dialog.Filter = "Все форматы |*.jpg*;*.jpeg*;*.jpe*;*.png|PNG (*.png*)|*.png|JPEG (*.jpg*,*.jpeg*,*.jpe*)|*.jpg*;*.jpeg*;*.jpe";
+            if (dialog.ShowDialog() == true)
+            {
+                ImageLogo.Source = new BitmapImage(new Uri(dialog.FileName, UriKind.Absolute));
+                TextImage.Text = System.IO.Path.GetFileName(dialog.FileName);
+                check = true;
+            }
+        }
         private void ButtonSave_Click(object sender, RoutedEventArgs e)
         {
-            var jsonRunner = File.ReadAllText("runners.json");
+            var jsonRunner = File.ReadAllText(System.IO.Path.GetFullPath("Resources/runners.json").Replace(@"\bin\Debug\", @"\"));
             List<Runners> list = JsonConvert.DeserializeObject<List<Runners>>(jsonRunner);
+            if (check)
+            {
+                try
+                {
+                    File.Copy(dialog.FileName, $"{System.IO.Path.GetFullPath("User photos/").Replace(@"\bin\Debug\", @"\")}{System.IO.Path.GetFileName(dialog.FileName)}");
+                }
+                catch (IOException) { }
+                ImageLogo.Source = new BitmapImage(new Uri($"{System.IO.Path.GetFullPath("User photos/").Replace(@"\bin\Debug\", @"\")}{System.IO.Path.GetFileName(dialog.FileName)}", UriKind.RelativeOrAbsolute));
+            }
             foreach (var item in list)
             {
                 if (item.Email.Contains(Email_temp))
@@ -89,12 +112,13 @@ namespace Marathon_registration
                     item.Birth_Date = SuperTime.Text;
                     item.Country = Country.Text;
                     item.Photo = ImageLogo.Source.ToString();
+                    Debug.WriteLine(item.Photo);
                     break;
                 }
             }
             this.NavigationService.Navigate(new AdminPage());
             var convertedJson = JsonConvert.SerializeObject(list, Formatting.Indented);
-            File.WriteAllText("runners.json", convertedJson);
+            File.WriteAllText(System.IO.Path.GetFullPath("Resources/runners.json").Replace(@"\bin\Debug\", @"\"), convertedJson);
         }
 
         private void ButtonClose_Click(object sender, RoutedEventArgs e)
@@ -109,5 +133,6 @@ namespace Marathon_registration
             ImageLogo.Source = new BitmapImage(new Uri(Photo_temp, UriKind.RelativeOrAbsolute));
             TextImage.Text = System.IO.Path.GetFileName(Photo_temp);
         }
+        
     }
 }
