@@ -65,7 +65,14 @@ namespace Marathon_registration
                 Sex.Text = Sex_temp;
                 SuperTime.Text = Date_temp;
                 Country.Text = Contry_temp;
-                ImageLogo.Source = new BitmapImage(new Uri(Photo_temp, UriKind.RelativeOrAbsolute));
+                if (!Photo_temp.Contains("pack://application:,,,/Marathon registration;component/Resources/Photo.png"))
+                {
+                    ImageLogo.Source = new BitmapImage(new Uri($"{System.IO.Path.GetFullPath("User photos/").Replace(@"\bin\Debug\", @"\")}{System.IO.Path.GetFileName(Photo_temp)}", UriKind.RelativeOrAbsolute));
+                }
+                else
+                {
+                    ImageLogo.Source = new BitmapImage(new Uri(Photo_temp, UriKind.RelativeOrAbsolute));
+                }
                 TextImage.Text = System.IO.Path.GetFileName(Photo_temp);
             }
             else
