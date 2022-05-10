@@ -71,6 +71,9 @@
     <Compile Include="LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Login_Choice.xaml.cs">
+      <DependentUpon>Login_Choice.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -87,6 +90,9 @@
       <DependentUpon>SponsorPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Validation.cs" />
+    <Compile Include="View runners.xaml.cs">
+      <DependentUpon>View runners.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WantRun.xaml.cs">
       <DependentUpon>WantRun.xaml</DependentUpon>
     </Compile>
@@ -103,6 +109,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="LoginPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Login_Choice.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -135,6 +145,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SponsorPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View runners.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

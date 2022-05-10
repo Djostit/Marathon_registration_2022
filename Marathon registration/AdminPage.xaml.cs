@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Microsoft.Win32;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -103,6 +104,27 @@ namespace Marathon_registration
             var jsonRunner = File.ReadAllText(System.IO.Path.GetFullPath("Resources/runners.json").Replace(@"\bin\Debug\", @"\")); ;
             List<Runners> list = JsonConvert.DeserializeObject<List<Runners>>(jsonRunner);
             this.NavigationService.Navigate(new AdminEditing(list[dataGrid.SelectedIndex].Email, list[dataGrid.SelectedIndex].Password, list[dataGrid.SelectedIndex].Name, list[dataGrid.SelectedIndex].Last_Name, list[dataGrid.SelectedIndex].Sex, list[dataGrid.SelectedIndex].Birth_Date, list[dataGrid.SelectedIndex].Country, list[dataGrid.SelectedIndex].Photo));
+        }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            SaveFileDialog sfd = new();
+            sfd.Title = "Сохранение отчёта";
+            sfd.Filter = "Все форматы |*.docx*;*.xlsx*;*.pdf|DOC (*.docx*)|*.docx|XLSX (*.xlsx*)|*.xlsx|PDF (*.pdf)|*.pdf";
+            if (sfd.ShowDialog() == true)
+            {
+                if (sfd.FilterIndex == 1)
+                {
+                }
+                else if (sfd.FilterIndex == 2)
+                {
+                    MessageBox.Show("xlsx");
+                }
+                else if (sfd.FilterIndex == 3)
+                {
+                    MessageBox.Show("pdf");
+                }
+            }
         }
     }
 }

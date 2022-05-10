@@ -1,15 +1,5 @@
 [
   {
-    "Email": "admin@bk.ru",
-    "Password": "admin",
-    "Name": "Admin",
-    "Last_Name": "Admin",
-    "Sex": "Ламинат",
-    "Birth_Date": "22.02.2002",
-    "Country": "Россия",
-    "Photo": "pack://application:,,,/Marathon registration;component/Resources/Photo.png"
-  },
-  {
     "Email": "renat@bk.ru",
     "Password": "renatNN11@",
     "Name": "Олег",
