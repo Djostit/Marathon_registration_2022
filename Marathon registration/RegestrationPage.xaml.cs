@@ -35,6 +35,7 @@ namespace Marathon_registration
         public string Birth_Date { get; set; }
         public string Country { get; set; }
         public string Photo { get; set; }
+        public int Birth_Date_Year { get; set; }
 
     }
     public partial class RegestrationPage : Page
@@ -129,7 +130,11 @@ namespace Marathon_registration
                 File.Copy(dialog.FileName, $"{System.IO.Path.GetFullPath("User photos/").Replace(@"\bin\Debug\", @"\")}{System.IO.Path.GetFileName(dialog.FileName)}");
                 ImageLogo.Source = new BitmapImage(new Uri($"{System.IO.Path.GetFullPath("User photos/").Replace(@"\bin\Debug\", @"\")}{System.IO.Path.GetFileName(dialog.FileName)}", UriKind.RelativeOrAbsolute));
             }
-            list.Add(new Runners{ Email = Login.Text, Password = Password.Text, Name = Name_runner.Text, Last_Name = Last_Name.Text, Sex = Sex.Text, Birth_Date = SuperTime.Text, Country = Country.Text, Photo = ImageLogo.Source.ToString() });
+            else
+            {
+                dialog.FileName = "pack://application:,,,/Marathon registration;component/Resources/Photo.png";
+            }
+            list.Add(new Runners{ Email = Login.Text, Password = Password.Text, Name = Name_runner.Text, Last_Name = Last_Name.Text, Sex = Sex.Text, Birth_Date = SuperTime.Text, Country = Country.Text, Photo = $"{System.IO.Path.GetFullPath("User photos/").Replace(@"\bin\Debug\", @"\")}{System.IO.Path.GetFileName(dialog.FileName)}", Birth_Date_Year = int.Parse(SuperTime.Text.Split('.')[2]) });
             var convertedJson = JsonConvert.SerializeObject(list, Formatting.Indented);
 
             File.WriteAllText(System.IO.Path.GetFullPath("Resources/runners.json").Replace(@"\bin\Debug\", @"\"), convertedJson);

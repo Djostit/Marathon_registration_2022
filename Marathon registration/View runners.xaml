@@ -101,6 +101,10 @@
                           Foreground="Gray"
                           FontFamily="Open Sans"
                           FontWeight="Light"/>
+                    <ComboBoxItem Content="Возрасту"
+                          Foreground="Gray"
+                          FontFamily="Open Sans"
+                          FontWeight="Light"/>
                     <ComboBoxItem Content="Сбросить"
                           Foreground="Gray"
                           FontFamily="Open Sans"
@@ -124,7 +128,9 @@
                     FontFamily="Open Sans"
                     FontWeight="Light"
                     Background="LightGray"
-                    Cursor="Hand" Margin="0,5,5,0"/>
+                    Cursor="Hand" 
+                        Margin="0,5,5,0"
+                        Click="Button_Click"/>
             </StackPanel>
         </StackPanel>
         <TextBlock x:Name="Count_Runner"
@@ -154,8 +160,10 @@
                     <StackPanel Orientation="Horizontal">
                         <Image x:Name="imageList"
                                Source="{Binding Path=Photo}"
+                               Stretch="Uniform"
                                Width="100" 
-                               Height="100"/>
+                               Height="100" 
+                               Margin="0,0,10,0"/>
                         <StackPanel>
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock Grid.Row="3"
@@ -178,7 +186,8 @@
                                        HorizontalAlignment="Left" 
                                        FontSize="15"/>
                             </StackPanel>
-                            <TextBlock Grid.Row="3"
+                            <TextBlock x:Name="DateBirth"
+                                       Grid.Row="3"
                                        Grid.Column="1"
                                        Text="{Binding Path=Birth_Date}"
                                        Foreground="Gray"

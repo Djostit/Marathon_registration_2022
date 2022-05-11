@@ -13,10 +13,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="44"/>
             <RowDefinition Height="55"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal"
                         Grid.Row="0"
@@ -43,7 +40,7 @@
                        FontSize="20"/>
         </StackPanel>
         <TextBlock Grid.Row="1"
-                       Text="Управление пользователями"
+                       Text="Выберите действие"
                        Margin="10,5,10,0"
                        Foreground="Gray"
                        FontFamily="Open Sans"
@@ -51,6 +48,13 @@
                        VerticalAlignment="Center"
                        HorizontalAlignment="Center"
                        FontSize="25"/>
+        <Viewbox Grid.Row="2"
+                 Stretch="Uniform"
+                 MaxWidth="450"
+                 MinWidth="350">
+        <StackPanel Grid.Row="2"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Center">
         <Button Content="Информация о марафоне"
                     Foreground="Black"
                     FontFamily="Open Sans"
@@ -89,5 +93,7 @@
                     Grid.Row="4"
                     Margin="10" Cursor="Hand"
                 Click="Button_Click_1"/>
+        </StackPanel>
+        </Viewbox>
     </Grid>
 </Page>

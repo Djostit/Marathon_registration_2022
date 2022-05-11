@@ -1,0 +1,364 @@
+﻿<Page x:Class="Marathon_registration.UserEditing"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Marathon_registration"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="UserEditing">
+
+    <Grid>
+        <DockPanel Background="White">
+            <StackPanel Orientation="Horizontal"
+                        DockPanel.Dock="Top"
+                        VerticalAlignment="Top"
+                        HorizontalAlignment="Stretch"
+                        Background="#FF505050">
+                <Button Content="Назад"
+                    Foreground="Black"
+                    FontFamily="Open Sans"
+                    FontWeight="Light"
+                    Margin="5"
+                    Background="LightGray"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Command="{x:Static NavigationCommands.BrowseBack}"/>
+                <TextBlock Text="MARATHON SKILLS 2022"
+                       Margin="5"
+                       Foreground="White"
+                       FontFamily="Open Sans"
+                       FontWeight="SemiBold"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       FontSize="20"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" 
+                        DockPanel.Dock="Top"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Top">
+                <TextBlock Text="Редактирование данных"
+                       Margin="10,5,10,10"
+                       Foreground="Gray"
+                       FontFamily="Open Sans"
+                       FontWeight="SemiBold"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       FontSize="25"/>
+                <TextBlock Text="Пожалуйста заполните всю информацию"
+                       TextWrapping="Wrap"
+                       Margin="5"
+                       Foreground="Gray"
+                       FontFamily="Open Sans"
+                       FontWeight="Light"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       FontSize="15"/>
+            </StackPanel>
+            <DockPanel VerticalAlignment="Top"
+                       HorizontalAlignment="Left"
+                       DockPanel.Dock="Left">
+                <StackPanel Orientation="Vertical"
+                            DockPanel.Dock="Left"
+                            VerticalAlignment="Top"
+                            HorizontalAlignment="Center"
+                            Margin="5">
+                    <TextBlock Text="Email:"
+                               Foreground="Gray"
+                               FontFamily="Open Sans"
+                               FontWeight="Light"
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Right"
+                               Margin="0,5,0,5"/>
+                    <TextBlock Text="Пароль:"
+                               Foreground="Gray"
+                               FontFamily="Open Sans"
+                               FontWeight="Light"
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Right"
+                               Margin="0,15,0,5"/>
+                    <TextBlock Text="Повторите пароль:"
+                               Foreground="Gray"
+                               FontFamily="Open Sans"
+                               FontWeight="Light"
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Right"
+                               Margin="0,15,0,0"/>
+                    <TextBlock Text="Имя:"
+                               Foreground="Gray"
+                               FontFamily="Open Sans"
+                               FontWeight="Light"
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Right"
+                               Margin="0,15,0,5"/>
+                    <TextBlock Text="Фамилия:"
+                               Foreground="Gray"
+                               FontFamily="Open Sans"
+                               FontWeight="Light"
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Right"
+                               Margin="0,15,0,5"/>
+                    <TextBlock Text="Пол:"
+                               Foreground="Gray"
+                               FontFamily="Open Sans"
+                               FontWeight="Light"
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Right"
+                               Margin="0,15,0,5"/>
+                </StackPanel>
+                <StackPanel Orientation="Vertical"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Center"
+                            DockPanel.Dock="Right">
+                    <TextBox x:Name="Login"
+                             Width="150"
+                             FontFamily="Open Sans"
+                             Foreground="Gray"
+                             materialDesign:HintAssist.Hint="Почта"
+                             materialDesign:HintAssist.FontFamily="Open Sans"
+                             HorizontalContentAlignment="Left"
+                             VerticalContentAlignment="Center"
+                             Margin="5" Cursor="Arrow"
+                             IsReadOnly="True"/>
+                    <TextBox x:Name="Password"
+                             Width="150"
+                             FontFamily="Font/#password"
+                             Foreground="Gray"
+                             materialDesign:HintAssist.Hint="Пароль"
+                             materialDesign:HintAssist.FontFamily="Open Sans"
+                             HorizontalContentAlignment="Left"
+                             VerticalContentAlignment="Center"
+                             Margin="5" Cursor="Arrow">
+                        <TextBox.ToolTip>
+                            <ToolTip Placement="Left"
+                                     Background="LightGray"
+                                     Foreground="Gray"
+                                     BorderBrush="Gray">
+                                <TextBlock>Минимум 6 символов<LineBreak/>
+                                           Минимум 1 прописная буква<LineBreak/>
+                                           Минимум 1 цифра<LineBreak/>
+                                           Минимум 1 символ: ! @ # $ % ^ &amp; * &quot;</TextBlock>
+                            </ToolTip>
+                        </TextBox.ToolTip>
+                        <TextBox.Text>
+                            <Binding Path="Password">
+                                <Binding.ValidationRules>
+                                    <DataErrorValidationRule/>
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </TextBox.Text>
+                    </TextBox>
+                    <TextBox x:Name="Retry_Pass"
+                             Width="150"
+                             FontFamily="Font/#password"
+                             Foreground="Gray"
+                             materialDesign:HintAssist.Hint="Повторите пароль"
+                             materialDesign:HintAssist.FontFamily="Open Sans"
+                                 HorizontalContentAlignment="Left"
+                                 VerticalContentAlignment="Center"
+                                 Margin="5">
+                        <TextBox.Text>
+                            <Binding Path="Retry_Password">
+                                <Binding.ValidationRules>
+                                    <DataErrorValidationRule />
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </TextBox.Text>
+                    </TextBox>
+                    <TextBox x:Name="Name_runner"
+                             Width="150"
+                             FontFamily="Open Sans"
+                             Foreground="Gray"
+                             materialDesign:HintAssist.Hint="Имя"
+                             materialDesign:HintAssist.FontFamily="Open Sans"
+                                 HorizontalContentAlignment="Left"
+                                 VerticalContentAlignment="Center"
+                             Margin="5">
+                        <TextBox.Text>
+                            <Binding Path="Name">
+                                <Binding.ValidationRules>
+                                    <DataErrorValidationRule />
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </TextBox.Text>
+                    </TextBox>
+                    <TextBox x:Name="Last_Name"
+                             Width="150"
+                             FontFamily="Open Sans"
+                             Foreground="Gray"
+                             materialDesign:HintAssist.Hint="Фамилия"
+                             materialDesign:HintAssist.FontFamily="Open Sans"
+                                 HorizontalContentAlignment="Left"
+                                 VerticalContentAlignment="Center"
+                             Margin="5" Cursor="Arrow">
+                        <TextBox.Text>
+                            <Binding Path="Last_Name">
+                                <Binding.ValidationRules>
+                                    <DataErrorValidationRule />
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </TextBox.Text>
+                    </TextBox>
+                    <ComboBox Name="Sex" 
+                             FontFamily="Open Sans"
+                             Foreground="Gray"
+                             materialDesign:HintAssist.Hint="Мужской"
+                             materialDesign:HintAssist.FontFamily="Open Sans"
+                             HorizontalContentAlignment="Left"
+                             VerticalContentAlignment="Center"
+                             Margin="5">
+                        <ComboBoxItem Content="Мужской"
+                                      Foreground="Gray"
+                                      FontFamily="Open Sans"
+                                      FontWeight="Light"/>
+                        <ComboBoxItem Content="Женский"
+                                      Foreground="Gray"
+                                      FontFamily="Open Sans"
+                                      FontWeight="Light"/>
+                        <ComboBoxItem Content="Ламинат"
+                                      Foreground="Gray"
+                                      FontFamily="Open Sans"
+                                      FontWeight="Light"/>
+                        <ComboBox.SelectedItem>
+                            <Binding Path="Sex">
+                                <Binding.ValidationRules>
+                                    <DataErrorValidationRule />
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </ComboBox.SelectedItem>
+                    </ComboBox>
+                </StackPanel>
+            </DockPanel>
+            <DockPanel VerticalAlignment="Top"
+                       HorizontalAlignment="Right"
+                       DockPanel.Dock="Right">
+                <StackPanel HorizontalAlignment="Right"
+                            VerticalAlignment="Center">
+                    <Image x:Name="ImageLogo"
+                           Width="90"
+                           Height="100"
+                           Margin="10"
+                           Source="Resources\Photo.png"
+                           Stretch="UniformToFill"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Right"/>
+                    <TextBlock Text=" Фото файла:"
+                               Foreground="Gray"
+                               FontFamily="Open Sans"
+                               FontWeight="Light"
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Left"/>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBox x:Name="TextImage"
+                             Width="150"
+                             FontFamily="Open Sans"
+                             Foreground="Gray"
+                             materialDesign:HintAssist.Hint="Photo.png"
+                             materialDesign:HintAssist.FontFamily="Open Sans"
+                             HorizontalContentAlignment="Left"
+                             VerticalContentAlignment="Center"
+                             Margin="5"
+                             IsReadOnly="True" Cursor="Arrow">
+                        </TextBox>
+                        <Button x:Name="Choice"
+                        Content="Просмотр..."
+                        Foreground="Black"
+                        FontFamily="Open Sans"
+                        FontWeight="Light"
+                        Background="LightGray"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Margin="5"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel>
+                            <TextBlock Text="Дата рождения:"
+                               Foreground="Gray"
+                               FontFamily="Open Sans"
+                               FontWeight="Light"
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Right"
+                               Margin="0,10,0,5"/>
+                            <TextBlock Text="Страна:"
+                               Foreground="Gray"
+                               FontFamily="Open Sans"
+                               FontWeight="Light"
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Right"
+                               Margin="0,12,0,5"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <DatePicker x:Name="SuperTime"
+                                        Width="100"
+                                        materialDesign:HintAssist.Hint="09.09.1999"
+                                        materialDesign:CalendarAssist.IsHeaderVisible="True"
+                                        Margin="5"
+                                        Foreground="Gray">
+                                <DatePicker.DisplayDate>
+                                    <Binding Path="SuperTime"
+                                             UpdateSourceTrigger="PropertyChanged">
+                                        <Binding.ValidationRules>
+                                            <DataErrorValidationRule ValidatesOnTargetUpdated="True"/>
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </DatePicker.DisplayDate>
+                            </DatePicker>
+                            <ComboBox x:Name="Country"
+                             FontFamily="Open Sans"
+                             Foreground="Gray"
+                             materialDesign:HintAssist.Hint="Россия"
+                             materialDesign:HintAssist.FontFamily="Open Sans"
+                             HorizontalContentAlignment="Left"
+                             VerticalContentAlignment="Center"
+                             Margin="5">
+                                <ComboBoxItem Content="Россия"
+                                      Foreground="Gray"
+                                      FontFamily="Open Sans"
+                                      FontWeight="Light"/>
+                                <ComboBoxItem Content="Украина"
+                                      Foreground="Gray"
+                                      FontFamily="Open Sans"
+                                      FontWeight="Light"/>
+                                <ComboBoxItem Content="Беларусь"
+                                      Foreground="Gray"
+                                      FontFamily="Open Sans"
+                                      FontWeight="Light"/>
+                                <ComboBox.SelectedItem>
+                                    <Binding Path="Country">
+                                        <Binding.ValidationRules>
+                                            <DataErrorValidationRule />
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </ComboBox.SelectedItem>
+                            </ComboBox>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+            </DockPanel>
+            <StackPanel Orientation="Horizontal"
+                            VerticalAlignment="Bottom"
+                            HorizontalAlignment="Left"
+                            Margin="10">
+                <Button x:Name="ButtonLogin"
+                        Content="Сохранить"
+                        Foreground="Black"
+                        FontFamily="Open Sans"
+                        FontWeight="Light"
+                        Background="LightGray"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Margin="5" Cursor="Hand"/>
+                <Button x:Name="ButtonClose"
+                        Content="Отмена"
+                        Foreground="Black"
+                        FontFamily="Open Sans"
+                        FontWeight="Light"
+                        Background="LightGray"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Margin="5" Cursor="Hand"/>
+            </StackPanel>
+        </DockPanel>
+    </Grid>
+</Page>

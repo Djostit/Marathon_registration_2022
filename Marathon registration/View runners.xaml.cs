@@ -34,6 +34,7 @@ namespace Marathon_registration
             Count_Runner.Text = $"Всего пользователей: {list.Count}";
             listView.ItemsSource = list;
             
+            
         }
 
         private void SortBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -54,7 +55,37 @@ namespace Marathon_registration
                     break;
                 case 3:
                     listView.Items.SortDescriptions.Clear();
+                    listView.Items.SortDescriptions.Add(new SortDescription("Birth_Date_Year", ListSortDirection.Descending));
                     break;
+                case 4:
+                    listView.Items.SortDescriptions.Clear();
+                    break;
+            }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (Search.Text.Length != 0)
+            {
+                List<Runners> list2 = JsonConvert.DeserializeObject<List<Runners>>(jsonRunner);
+                list2.Clear();
+                foreach (var item in list)
+                {
+                    if (item.Name.ToLower().Contains(Search.Text.ToLower()) || item.Last_Name.ToLower().Contains(Search.Text.ToLower()) || item.Sex.ToLower().Contains(Search.Text.ToLower()) || item.Last_Name.ToLower().Contains(Search.Text.ToLower()) || item.Country.ToLower().Contains(Search.Text.ToLower()))
+                    {   
+                        list2.Add(item);
+                    }
+                }
+                Count_Runner.Text = $"Всего пользователей: {list2.Count} из {list.Count}";
+                listView.ItemsSource = list2;
+            }
+            else if (Search.Text.Length == 0)
+            {
+                var jsonRunner = File.ReadAllText(System.IO.Path.GetFullPath("Resources/runners.json").Replace(@"\bin\Debug\", @"\"));
+                List<Runners> list = JsonConvert.DeserializeObject<List<Runners>>(jsonRunner);
+                Count_Runner.Text = $"Всего пользователей: {list.Count}";
+                listView.ItemsSource = list;
+                listView.UpdateLayout();
             }
         }
     }

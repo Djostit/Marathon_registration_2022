@@ -7,7 +7,8 @@
     "Sex": "Мужской",
     "Birth_Date": "01.01.2001",
     "Country": "Россия",
-    "Photo": "file:///C:/Users/djost/source/repos/Djostit/Marathon-registration/Marathon registration/User photos/aBMwpva8OVX9nkPqhacTGoZ0xkAgY80PUN68voB1AaY2iOmHBH6P8vwHuDqjM_sJP0zV-65tdFUCcdKs6hWdwspV.jpg"
+    "Photo": "C:\\Users\\Djostit\\source\\repos\\Djostit\\Marathon_registration_2022\\Marathon registration\\User photos\\aBMwpva8OVX9nkPqhacTGoZ0xkAgY80PUN68voB1AaY2iOmHBH6P8vwHuDqjM_sJP0zV-65tdFUCcdKs6hWdwspV.jpg",
+    "Birth_Date_Year": 2001
   },
   {
     "Email": "uksift@mail.ru",
@@ -17,7 +18,8 @@
     "Sex": "Мужской",
     "Birth_Date": "20.02.2002",
     "Country": "Россия",
-    "Photo": "pack://application:,,,/Marathon registration;component/Resources/Photo.png"
+    "Photo": "pack://application:,,,/Marathon registration;component/Resources/Photo.png",
+    "Birth_Date_Year": 2002
   },
   {
     "Email": "uksift@bk.ru",
@@ -27,17 +29,19 @@
     "Sex": "Мужской",
     "Birth_Date": "20.02.2002",
     "Country": "Россия",
-    "Photo": "pack://application:,,,/Marathon registration;component/Resources/Photo.png"
+    "Photo": "pack://application:,,,/Marathon registration;component/Resources/Photo.png",
+    "Birth_Date_Year": 2002
   },
   {
     "Email": "jkjl@bk.ru",
     "Password": "qweQWE123!@#",
     "Name": "Илья",
-    "Last_Name": "Новиков",
+    "Last_Name": "Рыболов",
     "Sex": "Мужской",
     "Birth_Date": "20.02.2002",
     "Country": "Россия",
-    "Photo": "pack://application:,,,/Marathon registration;component/Resources/Photo.png"
+    "Photo": "pack://application:,,,/Marathon registration;component/Resources/Photo.png",
+    "Birth_Date_Year": 2002
   },
   {
     "Email": "qweqwe@bk.ru",
@@ -47,7 +51,8 @@
     "Sex": "Мужской",
     "Birth_Date": "20.02.2002",
     "Country": "Россия",
-    "Photo": "file:///C:/Users/djost/source/repos/Djostit/Marathon-registration/Marathon registration/User photos/1639687948_145-catherineasquithgallery-com-p-rozovie-smailiki-aifon-175.png"
+    "Photo": "C:\\Users\\Djostit\\source\\repos\\Djostit\\Marathon_registration_2022\\Marathon registration\\User photos\\1639687948_145-catherineasquithgallery-com-p-rozovie-smailiki-aifon-175.png",
+    "Birth_Date_Year": 2002
   },
   {
     "Email": "amin@bk.ru",
@@ -57,6 +62,29 @@
     "Sex": "Мужской",
     "Birth_Date": "27.08.2004",
     "Country": "Россия",
-    "Photo": "file:///C:/Users/djost/source/repos/Djostit/Marathon-registration/Marathon registration/User photos/gPHxQZOWqYeosMJkq4HcaaElJz1e2SNiE8YXXxwDiDic9AwhQYA7y0syPXxKjKgNv5eOaZmVCxvvUCDEwsMSzHVz.jpg"
+    "Photo": "C:\\Users\\Djostit\\source\\repos\\Djostit\\Marathon_registration_2022\\Marathon registration\\User photos\\gPHxQZOWqYeosMJkq4HcaaElJz1e2SNiE8YXXxwDiDic9AwhQYA7y0syPXxKjKgNv5eOaZmVCxvvUCDEwsMSzHVz.jpg",
+    "Birth_Date_Year": 2004
+  },
+  {
+    "Email": "aadasd@mail.ru",
+    "Password": "asdASD123!@#",
+    "Name": "Никита",
+    "Last_Name": "Зверев",
+    "Sex": "Мужской",
+    "Birth_Date": "02.02.2000",
+    "Country": "Россия",
+    "Photo": "C:\\Users\\Djostit\\Source\\Repos\\Djostit\\Marathon_registration_2022\\Marathon registration\\User photos\\1648626208_pressa_tv_mem-01.jpg",
+    "Birth_Date_Year": 2000
+  },
+  {
+    "Email": "artrem@mail.ru",
+    "Password": "asdASD23$",
+    "Name": "Артем",
+    "Last_Name": "Десанкский",
+    "Sex": "Мужской",
+    "Birth_Date": "04.09.2004",
+    "Country": "Россия",
+    "Photo": "pack://application:,,,/Marathon registration;component/Resources/Photo.png",
+    "Birth_Date_Year": 2004
   }
 ]

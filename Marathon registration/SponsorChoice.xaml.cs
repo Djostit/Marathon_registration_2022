@@ -36,7 +36,7 @@ namespace Marathon_registration
         private void Ammount_TextInput(object sender, TextCompositionEventArgs e)
         {
 
-            if (Ammount.Text.Contains("0"))
+            if (Ammount.Text.Contains("0") && Ammount.Text.Length == 1)
             {
                 Ammount.Text = "";
             }

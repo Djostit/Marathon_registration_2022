@@ -45,8 +45,12 @@
                        VerticalAlignment="Center"
                        FontSize="18"/>
         </StackPanel>
+        <Viewbox Stretch="Uniform" 
+                 Grid.Row="1"
+                 MaxWidth="600"
+                 MinWidth="300">
         <StackPanel
-                    HorizontalAlignment="Stretch"
+                    HorizontalAlignment="Center"
                     VerticalAlignment="Center"
                     Grid.Row="1">
             <Button x:Name="WantRunButton"
@@ -86,8 +90,8 @@
                     Width="350"
                     Height="60"
                     Click="Button_Click_1"/>
-            
         </StackPanel>
+        </Viewbox>
         <Button Content="Войти" Grid.Row="1"
                     Foreground="Black"
                     FontFamily="Open Sans"

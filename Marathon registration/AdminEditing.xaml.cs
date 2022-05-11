@@ -119,6 +119,7 @@ namespace Marathon_registration
                     item.Birth_Date = SuperTime.Text;
                     item.Country = Country.Text;
                     item.Photo = ImageLogo.Source.ToString();
+                    item.Birth_Date_Year = int.Parse(SuperTime.Text.Split('.')[2]);
                     Debug.WriteLine(item.Photo);
                     break;
                 }
