@@ -97,10 +97,6 @@
                           Foreground="Gray"
                           FontFamily="Open Sans"
                           FontWeight="Light"/>
-                    <ComboBoxItem Content="Эл.почты"
-                          Foreground="Gray"
-                          FontFamily="Open Sans"
-                          FontWeight="Light"/>
                     <ComboBoxItem Content="Полу"
                           Foreground="Gray"
                           FontFamily="Open Sans"
@@ -144,42 +140,75 @@
                    HorizontalAlignment="Left" 
                    FontSize="15">
         </TextBlock>
-        <DataGrid x:Name="dataGrid"
+        <ListView x:Name="listView"
                   Grid.Row="4"
                   Grid.Column="1"
-                  ColumnWidth="*"
-                  AutoGenerateColumns="False"
                   Grid.ColumnSpan="2"
                   HorizontalAlignment="Stretch"
                   VerticalAlignment="Stretch" 
                   Margin="50,0,50,0"
                   VerticalContentAlignment="Stretch"
-                  HorizontalContentAlignment="Stretch"
-                  CanUserAddRows="False"
-                  CanUserDeleteRows="False"
-                  IsReadOnly="True">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Имя">
-                    <DataGridTextColumn.Binding>
-                        <Binding Path="Name"/>
-                    </DataGridTextColumn.Binding>
-                </DataGridTextColumn>
-                <DataGridTextColumn Header="Фамилия">
-                    <DataGridTextColumn.Binding>
-                        <Binding Path="Last_Name"/>
-                    </DataGridTextColumn.Binding>
-                </DataGridTextColumn>
-                <DataGridTextColumn Header="Эл.почта">
-                    <DataGridTextColumn.Binding>
-                        <Binding Path="Email"/>
-                    </DataGridTextColumn.Binding>
-                </DataGridTextColumn>
-                <DataGridTextColumn Header="Пол">
-                    <DataGridTextColumn.Binding>
-                        <Binding Path="Sex"/>
-                    </DataGridTextColumn.Binding>
-                </DataGridTextColumn>
-            </DataGrid.Columns>
-        </DataGrid>
+                  HorizontalContentAlignment="Stretch">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <Image x:Name="imageList"
+                               Source="{Binding Path=Photo}"
+                               Width="100" 
+                               Height="100"/>
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Grid.Row="3"
+                                       Grid.Column="1"
+                                       Text="{Binding Path=Name}"
+                                       Foreground="Gray"
+                                       FontFamily="Open Sans"
+                                       FontWeight="Light"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Left" 
+                                       FontSize="15"/>
+                                <TextBlock Grid.Row="3"
+                                       Grid.Column="1"
+                                       Text="{Binding Path=Last_Name}"
+                                       Foreground="Gray"
+                                       Margin="5,0,0,0"
+                                       FontFamily="Open Sans"
+                                       FontWeight="Light"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Left" 
+                                       FontSize="15"/>
+                            </StackPanel>
+                            <TextBlock Grid.Row="3"
+                                       Grid.Column="1"
+                                       Text="{Binding Path=Birth_Date}"
+                                       Foreground="Gray"
+                                       FontFamily="Open Sans"
+                                       FontWeight="Light"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Left" 
+                                       FontSize="15"/>
+                            <TextBlock Grid.Row="3"
+                                       Grid.Column="1"
+                                       Text="{Binding Path=Sex}"
+                                       Foreground="Gray"
+                                       FontFamily="Open Sans"
+                                       FontWeight="Light"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Left" 
+                                       FontSize="15"/>
+                            <TextBlock Grid.Row="3"
+                                       Grid.Column="1"
+                                       Text="{Binding Path=Country}"
+                                       Foreground="Gray"
+                                       FontFamily="Open Sans"
+                                       FontWeight="Light"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Left" 
+                                       FontSize="15"/>
+                        </StackPanel>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </Grid>
 </Page>

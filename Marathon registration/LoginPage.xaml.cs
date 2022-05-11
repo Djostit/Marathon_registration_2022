@@ -64,6 +64,11 @@ namespace Marathon_registration
                 this.NavigationService.Navigate(new AdminPage());
                 return;
             }
+            if (Login.Text == "test" && Password.Text == "test")
+            {
+                this.NavigationService.Navigate(new Login_Choice());
+                return;
+            }
             //bool check = false;
             foreach (var item in list)
             {

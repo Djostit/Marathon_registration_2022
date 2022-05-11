@@ -32,7 +32,8 @@ namespace Marathon_registration
             list = JsonConvert.DeserializeObject<List<Runners>>(jsonRunner);
 
             Count_Runner.Text = $"Всего пользователей: {list.Count}";
-            dataGrid.ItemsSource = list;
+            listView.ItemsSource = list;
+            
         }
 
         private void SortBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -40,23 +41,19 @@ namespace Marathon_registration
             switch (SortBox.SelectedIndex)
             {
                 case 0:
-                    dataGrid.Items.SortDescriptions.Clear();
-                    dataGrid.Items.SortDescriptions.Add(new SortDescription("Name", ListSortDirection.Descending));
+                    listView.Items.SortDescriptions.Clear();
+                    listView.Items.SortDescriptions.Add(new SortDescription("Name", ListSortDirection.Descending));
                     break;
                 case 1:
-                    dataGrid.Items.SortDescriptions.Clear();
-                    dataGrid.Items.SortDescriptions.Add(new SortDescription("Last_Name", ListSortDirection.Descending));
+                    listView.Items.SortDescriptions.Clear();
+                    listView.Items.SortDescriptions.Add(new SortDescription("Last_Name", ListSortDirection.Descending));
                     break;
                 case 2:
-                    dataGrid.Items.SortDescriptions.Clear();
-                    dataGrid.Items.SortDescriptions.Add(new SortDescription("Email", ListSortDirection.Descending));
+                    listView.Items.SortDescriptions.Clear();
+                    listView.Items.SortDescriptions.Add(new SortDescription("Sex", ListSortDirection.Descending));
                     break;
                 case 3:
-                    dataGrid.Items.SortDescriptions.Clear();
-                    dataGrid.Items.SortDescriptions.Add(new SortDescription("Sex", ListSortDirection.Descending));
-                    break;
-                case 4:
-                    dataGrid.Items.SortDescriptions.Clear();
+                    listView.Items.SortDescriptions.Clear();
                     break;
             }
         }
