@@ -21,6 +21,8 @@ namespace Marathon_registration
     /// <summary>
     /// Логика взаимодействия для View_runners.xaml
     /// </summary>
+
+
     public partial class View_runners : Page
     {
         List<Runners> list;
@@ -33,8 +35,6 @@ namespace Marathon_registration
 
             Count_Runner.Text = $"Всего пользователей: {list.Count}";
             listView.ItemsSource = list;
-            
-            
         }
 
         private void SortBox_SelectionChanged(object sender, SelectionChangedEventArgs e)

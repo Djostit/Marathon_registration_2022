@@ -50,6 +50,7 @@ namespace Marathon_registration
                                     if (item.Email.Contains(Email))
                                     {
                                         error = "Почта уже существует";
+                                        break;
                                     }
                                 }
                             }

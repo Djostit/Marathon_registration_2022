@@ -38,6 +38,10 @@
                        HorizontalAlignment="Center"
                        FontSize="20"/>
         </StackPanel>
+        <Viewbox Grid.Row="1"
+                 Stretch="Uniform"
+                 MinWidth="600"
+                 MaxWidth="1000">
         <DockPanel Grid.Row="1"
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center">
@@ -171,5 +175,6 @@
                     Click="Button_Click"/>
             </StackPanel>
         </DockPanel>
+        </Viewbox>
     </Grid>
 </Page>

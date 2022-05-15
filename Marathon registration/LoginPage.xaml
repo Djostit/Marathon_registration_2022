@@ -38,6 +38,10 @@
                        HorizontalAlignment="Center"
                        FontSize="20"/>
         </StackPanel>
+        <Viewbox Grid.Row="1"
+                 Stretch="Uniform"
+                 MinWidth="600"
+                 MaxWidth="1000">
         <StackPanel Orientation="Vertical" 
                         Grid.Row="1"
                         HorizontalAlignment="Center"
@@ -160,5 +164,6 @@
                         Click="ButtonCancel_Click" Cursor="Hand"/>
             </StackPanel>
         </StackPanel>
+        </Viewbox>
     </Grid>
 </Page>
