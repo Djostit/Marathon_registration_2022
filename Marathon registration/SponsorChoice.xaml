@@ -114,7 +114,9 @@
                                  VerticalContentAlignment="Center"
                              Margin="5,5,5,15" Cursor="Arrow">
                         <TextBox.Text>
-                            <Binding Path="SponsorName">
+                                <Binding Path="SponsorName"
+                                     Mode="TwoWay" 
+                                     UpdateSourceTrigger="PropertyChanged">
                                 <Binding.ValidationRules>
                                     <DataErrorValidationRule />
                                 </Binding.ValidationRules>
@@ -142,7 +144,9 @@
                             </ToolTip>
                         </TextBox.ToolTip>
                         <TextBox.Text>
-                            <Binding Path="Ammount">
+                                <Binding Path="Ammount"
+                                     Mode="TwoWay" 
+                                     UpdateSourceTrigger="PropertyChanged">
                                 <Binding.ValidationRules>
                                     <DataErrorValidationRule />
                                 </Binding.ValidationRules>

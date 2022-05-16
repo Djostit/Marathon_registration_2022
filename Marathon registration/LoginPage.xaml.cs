@@ -89,13 +89,9 @@ namespace Marathon_registration
             }
             Captcha.Source = Imaging.CreateBitmapSourceFromHBitmap(bmp1.GetHbitmap(), IntPtr.Zero, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
         }
-        string temp;
         private void ButtonLogin_Click(object sender, RoutedEventArgs e)
         {
             bool check = false;
-            string TextT = TextCapth();
-
-            DrawCapth(TextT);
             if (Login.Text == "admin" && Password.Text == "admin")
             {
                 this.NavigationService.Navigate(new AdminPage());
@@ -106,14 +102,10 @@ namespace Marathon_registration
                 this.NavigationService.Navigate(new Login_Choice(0));
                 return;
             }
-            Debug.WriteLine(TextT + " " + "Temp" + " " + temp);
-            if (cAPTCHA.Text.Contains(temp))
+            Debug.WriteLine(TextCapth());
+            if (cAPTCHA.Text == TextCapth())
             {
-                MessageBox.Show(cAPTCHA.Text);
-            }
-            else
-            {
-                MessageBox.Show(cAPTCHA.Text + " " + TextT);
+                MessageBox.Show("1");
             }
             for (int i = 0; i < list.Count; i++)
             {

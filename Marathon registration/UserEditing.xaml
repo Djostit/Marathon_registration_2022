@@ -142,9 +142,11 @@
                             </ToolTip>
                         </TextBox.ToolTip>
                         <TextBox.Text>
-                            <Binding Path="Password">
+                            <Binding Path="Password" 
+                                     Mode="TwoWay" 
+                                     UpdateSourceTrigger="PropertyChanged">
                                 <Binding.ValidationRules>
-                                    <DataErrorValidationRule/>
+                                    <DataErrorValidationRule />
                                 </Binding.ValidationRules>
                             </Binding>
                         </TextBox.Text>
@@ -159,7 +161,9 @@
                                  VerticalContentAlignment="Center"
                                  Margin="5">
                         <TextBox.Text>
-                            <Binding Path="Retry_Password">
+                            <Binding Path="Retry_Password"
+                                     Mode="TwoWay" 
+                                     UpdateSourceTrigger="PropertyChanged">
                                 <Binding.ValidationRules>
                                     <DataErrorValidationRule />
                                 </Binding.ValidationRules>
@@ -176,7 +180,9 @@
                                  VerticalContentAlignment="Center"
                              Margin="5">
                         <TextBox.Text>
-                            <Binding Path="Name">
+                            <Binding Path="Name"
+                                     Mode="TwoWay" 
+                                     UpdateSourceTrigger="PropertyChanged">
                                 <Binding.ValidationRules>
                                     <DataErrorValidationRule />
                                 </Binding.ValidationRules>
@@ -193,7 +199,9 @@
                                  VerticalContentAlignment="Center"
                              Margin="5" Cursor="Arrow">
                         <TextBox.Text>
-                            <Binding Path="Last_Name">
+                            <Binding Path="Last_Name"
+                                     Mode="TwoWay" 
+                                     UpdateSourceTrigger="PropertyChanged">
                                 <Binding.ValidationRules>
                                     <DataErrorValidationRule />
                                 </Binding.ValidationRules>
@@ -221,7 +229,9 @@
                                       FontFamily="Open Sans"
                                       FontWeight="Light"/>
                         <ComboBox.SelectedItem>
-                            <Binding Path="Sex">
+                            <Binding Path="Sex"
+                                     Mode="TwoWay" 
+                                     UpdateSourceTrigger="PropertyChanged">
                                 <Binding.ValidationRules>
                                     <DataErrorValidationRule />
                                 </Binding.ValidationRules>
@@ -325,7 +335,9 @@
                                       FontFamily="Open Sans"
                                       FontWeight="Light"/>
                                 <ComboBox.SelectedItem>
-                                    <Binding Path="Country">
+                                    <Binding Path="Country"
+                                     Mode="TwoWay" 
+                                     UpdateSourceTrigger="PropertyChanged">
                                         <Binding.ValidationRules>
                                             <DataErrorValidationRule />
                                         </Binding.ValidationRules>
