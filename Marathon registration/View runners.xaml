@@ -183,7 +183,7 @@
                                        FontFamily="Open Sans"
                                        FontWeight="Light"
                                        VerticalAlignment="Center"
-                                       HorizontalAlignment="Left" 
+                                       HorizontalAlignment="Left"
                                        FontSize="15"/>
                             </StackPanel>
                             <TextBlock x:Name="DateBirth"
@@ -191,6 +191,7 @@
                                        Grid.Column="1"
                                        Text="{Binding Path=Birth_Date}"
                                        Foreground="Gray"
+                                       Background="{Binding Path=Color}"
                                        FontFamily="Open Sans"
                                        FontWeight="Light"
                                        VerticalAlignment="Center"

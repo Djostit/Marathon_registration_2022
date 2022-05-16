@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -47,6 +49,26 @@ namespace Marathon_registration
             timer1.Interval = TimeSpan.FromMilliseconds(10);
             timer1.Tick += timerTickText;
             timer1.Start();
+
+            var jsonRunner = File.ReadAllText(System.IO.Path.GetFullPath("Resources/runners.json").Replace(@"\bin\Debug\", @"\"));
+            List<Runners> list = JsonConvert.DeserializeObject<List<Runners>>(jsonRunner);
+            foreach (var item in list)
+            {
+                if (DateTime.Now.Year - item.Birth_Date_Year >= 50)
+                {
+                    item.Color = "#FFF3E916";
+                }
+                else if (DateTime.Now.Year - item.Birth_Date_Year < 20)
+                {
+                    item.Color = "#FF44EE12";
+                }
+                else if (DateTime.Now.Year - item.Birth_Date_Year >= 20)
+                {
+                    item.Color = "Transparent";
+                }
+            }
+            var convertedJson = JsonConvert.SerializeObject(list, Formatting.Indented);
+            File.WriteAllText(System.IO.Path.GetFullPath("Resources/runners.json").Replace(@"\bin\Debug\", @"\"), convertedJson);
         }
 
         private void timerTickText(object sender, EventArgs e)

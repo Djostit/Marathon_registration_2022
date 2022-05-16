@@ -36,6 +36,7 @@ namespace Marathon_registration
         public string Country { get; set; }
         public string Photo { get; set; }
         public int Birth_Date_Year { get; set; }
+        public string Color { get; set; }
 
     }
     public partial class RegestrationPage : Page
@@ -103,6 +104,7 @@ namespace Marathon_registration
                 }
             }
             //13.04.2022
+            string Color_temp = "#FF44EE12";
             if (SuperTime.Text.Length != 0)
             {
                 int day = int.Parse(SuperTime.Text.Split('.')[0]);
@@ -114,6 +116,10 @@ namespace Marathon_registration
                     age--;
                 }
                 if (age < 10 || age > 85) { return; }
+                if (age < 50)
+                {
+                    Color_temp = "#FFF3E916";
+                }
             }
             if (Name_runner.Text.Length == 0 || 
                 Last_Name.Text.Length == 0 || 
@@ -123,18 +129,19 @@ namespace Marathon_registration
                 Sex.Text.Length == 0 || 
                 Country.Text.Length == 0 ||
                 SuperTime.Text.Length == 0) { return; }
-            
+            string Photo = string.Empty;
             this.NavigationService.Navigate(new RegestrationConfirmation());
             if (check)
             {
                 File.Copy(dialog.FileName, $"{System.IO.Path.GetFullPath("User photos/").Replace(@"\bin\Debug\", @"\")}{System.IO.Path.GetFileName(dialog.FileName)}");
                 ImageLogo.Source = new BitmapImage(new Uri($"{System.IO.Path.GetFullPath("User photos/").Replace(@"\bin\Debug\", @"\")}{System.IO.Path.GetFileName(dialog.FileName)}", UriKind.RelativeOrAbsolute));
+                Photo = $"{System.IO.Path.GetFullPath("User photos/").Replace(@"\bin\Debug\", @"\")}{System.IO.Path.GetFileName(dialog.FileName)}";
             }
             else
             {
-                dialog.FileName = "pack://application:,,,/Marathon registration;component/Resources/Photo.png";
+                Photo = "pack://application:,,,/Marathon registration;component/Resources/Photo.png";
             }
-            list.Add(new Runners{ Email = Login.Text, Password = Password.Text, Name = Name_runner.Text, Last_Name = Last_Name.Text, Sex = Sex.Text, Birth_Date = SuperTime.Text, Country = Country.Text, Photo = $"{System.IO.Path.GetFullPath("User photos/").Replace(@"\bin\Debug\", @"\")}{System.IO.Path.GetFileName(dialog.FileName)}", Birth_Date_Year = int.Parse(SuperTime.Text.Split('.')[2]) });
+            list.Add(new Runners{ Email = Login.Text, Password = Password.Text, Name = Name_runner.Text, Last_Name = Last_Name.Text, Sex = Sex.Text, Birth_Date = SuperTime.Text, Country = Country.Text, Photo = Photo, Birth_Date_Year = int.Parse(SuperTime.Text.Split('.')[2]), Color = Color_temp });
             var convertedJson = JsonConvert.SerializeObject(list, Formatting.Indented);
 
             File.WriteAllText(System.IO.Path.GetFullPath("Resources/runners.json").Replace(@"\bin\Debug\", @"\"), convertedJson);

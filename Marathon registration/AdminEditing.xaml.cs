@@ -120,7 +120,18 @@ namespace Marathon_registration
                     item.Country = Country.Text;
                     item.Photo = ImageLogo.Source.ToString();
                     item.Birth_Date_Year = int.Parse(SuperTime.Text.Split('.')[2]);
-                    Debug.WriteLine(item.Photo);
+                    if (DateTime.Now.Year - item.Birth_Date_Year >= 50)
+                    {
+                        item.Color = "#FFF3E916";
+                    }
+                    else if (DateTime.Now.Year - item.Birth_Date_Year < 20)
+                    {
+                        item.Color = "#FF44EE12";
+                    }
+                    else if (DateTime.Now.Year - item.Birth_Date_Year >= 20)
+                    {
+                        item.Color = "Transparent";
+                    }
                     break;
                 }
             }

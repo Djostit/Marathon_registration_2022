@@ -119,7 +119,7 @@
                     </TextBox.Text>
                 </TextBox>
             </StackPanel>
-            <StackPanel Orientation="Vertical"
+            <StackPanel Orientation="Horizontal"
                             VerticalAlignment="Center"
                             HorizontalAlignment="Center"
                             Margin="10">

@@ -8,7 +8,8 @@
     "Birth_Date": "01.01.2001",
     "Country": "Россия",
     "Photo": "C:\\Users\\Djostit\\source\\repos\\Djostit\\Marathon_registration_2022\\Marathon registration\\User photos\\aBMwpva8OVX9nkPqhacTGoZ0xkAgY80PUN68voB1AaY2iOmHBH6P8vwHuDqjM_sJP0zV-65tdFUCcdKs6hWdwspV.jpg",
-    "Birth_Date_Year": 2001
+    "Birth_Date_Year": 2001,
+    "Color": "Transparent"
   },
   {
     "Email": "uksift@mail.ru",
@@ -19,7 +20,8 @@
     "Birth_Date": "20.02.2002",
     "Country": "Россия",
     "Photo": "pack://application:,,,/Marathon registration;component/Resources/Photo.png",
-    "Birth_Date_Year": 2002
+    "Birth_Date_Year": 2002,
+    "Color": "Transparent"
   },
   {
     "Email": "uksift@bk.ru",
@@ -27,10 +29,11 @@
     "Name": "Дмитрий",
     "Last_Name": "Васильев",
     "Sex": "Мужской",
-    "Birth_Date": "20.02.2002",
+    "Birth_Date": "20.02.1950",
     "Country": "Россия",
     "Photo": "pack://application:,,,/Marathon registration;component/Resources/Photo.png",
-    "Birth_Date_Year": 2002
+    "Birth_Date_Year": 1950,
+    "Color": "#FFF3E916"
   },
   {
     "Email": "jkjl@bk.ru",
@@ -41,7 +44,8 @@
     "Birth_Date": "20.02.2002",
     "Country": "Россия",
     "Photo": "pack://application:,,,/Marathon registration;component/Resources/Photo.png",
-    "Birth_Date_Year": 2002
+    "Birth_Date_Year": 2002,
+    "Color": "Transparent"
   },
   {
     "Email": "qweqwe@bk.ru",
@@ -52,7 +56,8 @@
     "Birth_Date": "20.02.2002",
     "Country": "Россия",
     "Photo": "C:\\Users\\Djostit\\source\\repos\\Djostit\\Marathon_registration_2022\\Marathon registration\\User photos\\1639687948_145-catherineasquithgallery-com-p-rozovie-smailiki-aifon-175.png",
-    "Birth_Date_Year": 2002
+    "Birth_Date_Year": 2002,
+    "Color": "Transparent"
   },
   {
     "Email": "amin@bk.ru",
@@ -63,7 +68,8 @@
     "Birth_Date": "27.08.2004",
     "Country": "Россия",
     "Photo": "C:\\Users\\Djostit\\source\\repos\\Djostit\\Marathon_registration_2022\\Marathon registration\\User photos\\gPHxQZOWqYeosMJkq4HcaaElJz1e2SNiE8YXXxwDiDic9AwhQYA7y0syPXxKjKgNv5eOaZmVCxvvUCDEwsMSzHVz.jpg",
-    "Birth_Date_Year": 2004
+    "Birth_Date_Year": 2004,
+    "Color": "#FF44EE12"
   },
   {
     "Email": "aadasd@mail.ru",
@@ -74,7 +80,8 @@
     "Birth_Date": "02.02.2000",
     "Country": "Россия",
     "Photo": "C:\\Users\\Djostit\\Source\\Repos\\Djostit\\Marathon_registration_2022\\Marathon registration\\User photos\\1648626208_pressa_tv_mem-01.jpg",
-    "Birth_Date_Year": 2000
+    "Birth_Date_Year": 2000,
+    "Color": "Transparent"
   },
   {
     "Email": "artrem@mail.ru",
@@ -85,6 +92,43 @@
     "Birth_Date": "04.09.2004",
     "Country": "Россия",
     "Photo": "pack://application:,,,/Marathon registration;component/Resources/Photo.png",
-    "Birth_Date_Year": 2004
+    "Birth_Date_Year": 2004,
+    "Color": "#FF44EE12"
+  },
+  {
+    "Email": "Alexy@yandex.ru",
+    "Password": "ksksKJ(89",
+    "Name": "Алексей",
+    "Last_Name": "Петров",
+    "Sex": "Мужской",
+    "Birth_Date": "26.02.2004",
+    "Country": "Россия",
+    "Photo": "C:\\Users\\Djostit\\Source\\Repos\\Djostit\\Marathon_registration_2022\\Marathon registration\\User photos\\Help_icon-icons.com_55891.png",
+    "Birth_Date_Year": 2004,
+    "Color": "#FF44EE12"
+  },
+  {
+    "Email": "marat@yandex.ru",
+    "Password": "MaraT1!",
+    "Name": "Марат",
+    "Last_Name": "Музафаров",
+    "Sex": "Мужской",
+    "Birth_Date": "20.07.2004",
+    "Country": "Украина",
+    "Photo": "pack://application:,,,/Marathon registration;component/Resources/Photo.png",
+    "Birth_Date_Year": 2004,
+    "Color": "#FF44EE12"
+  },
+  {
+    "Email": "asds@mail.ru",
+    "Password": "asdASD123ASD2@",
+    "Name": "asdasd",
+    "Last_Name": "dasd",
+    "Sex": "Мужской",
+    "Birth_Date": "20.02.1980",
+    "Country": "Беларусь",
+    "Photo": "pack://application:,,,/Marathon registration;component/Resources/Photo.png",
+    "Birth_Date_Year": 1980,
+    "Color": "#FFF3E916"
   }
 ]

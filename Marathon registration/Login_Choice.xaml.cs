@@ -20,9 +20,11 @@ namespace Marathon_registration
     /// </summary>
     public partial class Login_Choice : Page
     {
-        public Login_Choice()
+        int index;
+        public Login_Choice(int number)
         {
             InitializeComponent();
+            index = number;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -37,7 +39,7 @@ namespace Marathon_registration
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new UserEditing());
+            this.NavigationService.Navigate(new UserEditing(index));
         }
     }
 }

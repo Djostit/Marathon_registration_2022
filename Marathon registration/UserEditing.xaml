@@ -357,7 +357,8 @@
                         Background="LightGray"
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center"
-                        Margin="5" Cursor="Hand"/>
+                        Margin="5" Cursor="Hand"
+                        Click="ButtonClose_Click"/>
             </StackPanel>
         </DockPanel>
     </Grid>
