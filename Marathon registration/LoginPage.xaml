@@ -129,7 +129,7 @@
                             Margin="10">
                 <Image x:Name="Captcha"
                        Width="100"
-                       Height="30"
+                       Height="50"
                        RenderOptions.BitmapScalingMode="NearestNeighbor"/>
                 <TextBox x:Name="cAPTCHA"
                              Width="100"

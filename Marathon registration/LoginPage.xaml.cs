@@ -17,6 +17,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace Marathon_registration
 {
@@ -26,6 +27,7 @@ namespace Marathon_registration
     public partial class LoginPage : Page
     {
         List<Runners> list;
+        DispatcherTimer timer1;
         public LoginPage()
         {
             InitializeComponent();
@@ -35,6 +37,16 @@ namespace Marathon_registration
             list = JsonConvert.DeserializeObject<List<Runners>>(jsonRunner);
             Captcha.Visibility = Visibility.Collapsed;
             cAPTCHA.Visibility = Visibility.Collapsed;
+
+            timer1 = new DispatcherTimer();
+            timer1.Interval = TimeSpan.FromSeconds(10);
+            timer1.Tick += TimerTickText;
+        }
+
+        private void TimerTickText(object sender, EventArgs e)
+        {
+            ButtonLogin.IsEnabled = true; 
+            timer1.Stop();
         }
 
         private void ButtonCancel_Click(object sender, RoutedEventArgs e)
@@ -89,9 +101,11 @@ namespace Marathon_registration
             }
             Captcha.Source = Imaging.CreateBitmapSourceFromHBitmap(bmp1.GetHbitmap(), IntPtr.Zero, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
         }
+        string st;
+        bool check = false;
+        int attempt;
         private void ButtonLogin_Click(object sender, RoutedEventArgs e)
         {
-            bool check = false;
             if (Login.Text == "admin" && Password.Text == "admin")
             {
                 this.NavigationService.Navigate(new AdminPage());
@@ -102,31 +116,49 @@ namespace Marathon_registration
                 this.NavigationService.Navigate(new Login_Choice(0));
                 return;
             }
-            Debug.WriteLine(TextCapth());
-            if (cAPTCHA.Text == TextCapth())
+            Debug.WriteLine("1 " + st);
+            if (attempt == 1)
             {
-                MessageBox.Show("1");
+                ButtonLogin.IsEnabled = false;
+                timer1.Start();
             }
+            Debug.WriteLine($"кол-во: {attempt}");
             for (int i = 0; i < list.Count; i++)
             {
                 if (list[i].Email == Login.Text && list[i].Password == Password.Text)
                 {
+                    if (cAPTCHA.Text != st && Captcha.Visibility == Visibility.Visible)
+                    {
+                        attempt = 1;
+                        break;
+                    }
                     this.NavigationService.Navigate(new Login_Choice(i));
+                    attempt = 0;
+                    ButtonLogin.IsEnabled = true;
+                    timer1.Stop();
                     check = false;
                     break;
                 }
                 else
                 {
                     check = true;
+                    attempt = 1;
                 }
             }
-            if (check)
+            Debug.WriteLine($"кол-во: {attempt}");
+            st = TextCapth();
+            Debug.WriteLine("2 " + st);
+            DrawCapth(st);
+            if (check && Captcha.Visibility != Visibility.Visible && cAPTCHA.Visibility != Visibility.Visible)
             {
-                if (Captcha.Visibility != Visibility.Visible && cAPTCHA.Visibility != Visibility.Visible)
-                {
-                    Captcha.Visibility = Visibility.Visible;
-                    cAPTCHA.Visibility = Visibility.Visible;
-                }
+                Captcha.Visibility = Visibility.Visible;
+                cAPTCHA.Visibility = Visibility.Visible;
+            }
+            else if(!check && Captcha.Visibility != Visibility.Collapsed && cAPTCHA.Visibility != Visibility.Collapsed)
+            {
+                Captcha.Visibility = Visibility.Collapsed;
+                cAPTCHA.Visibility = Visibility.Collapsed;
+                cAPTCHA.Clear();
             }
         }
     }
