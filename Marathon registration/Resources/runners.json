@@ -154,29 +154,5 @@
     "Photo": "pack://application:,,,/Marathon registration;component/Resources/Photo.png",
     "Birth_Date_Year": 2004,
     "Color": "#FF44EE12"
-  },
-  {
-    "Email": "asdasd@mail.ru",
-    "Password": "asdasd@mail.r2@sSu",
-    "Name": "asdasd@mail.r2@sSu",
-    "Last_Name": "asdasd@mail.r2@sSu",
-    "Sex": "Мужской",
-    "Birth_Date": "11.01.2001",
-    "Country": "Россия",
-    "Photo": "pack://application:,,,/Marathon registration;component/Resources/Photo.png",
-    "Birth_Date_Year": 2001,
-    "Color": "Transparent"
-  },
-  {
-    "Email": "asdasds@mail.ru",
-    "Password": "asdasd@mail.r2@sSu",
-    "Name": "asdasd@mail.r2@sSu",
-    "Last_Name": "asdasd@mail.r2@sSu",
-    "Sex": "Мужской",
-    "Birth_Date": "20.02.2002",
-    "Country": "Россия",
-    "Photo": "pack://application:,,,/Marathon registration;component/Resources/Photo.png",
-    "Birth_Date_Year": 2002,
-    "Color": "Transparent"
   }
 ]

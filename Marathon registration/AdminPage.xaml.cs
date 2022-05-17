@@ -140,6 +140,19 @@ namespace Marathon_registration
                         r++;
                     }
                     Word.Document oDoc = new();
+
+                    //Текст шапки
+                    foreach (Word.Section section in oDoc.Application.ActiveDocument.Sections)
+                    {
+                        Word.Range headerRange = section.Headers[Word.WdHeaderFooterIndex.wdHeaderFooterPrimary].Range;
+                        headerRange.Fields.Add(headerRange, Word.WdFieldType.wdFieldPage);
+                        headerRange.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphCenter;
+                        headerRange.Text = "Список спортсменов";
+                        headerRange.Font.Size = 16;
+                        headerRange.Font.Name = "Open Sans";
+                        headerRange.Font.Bold = 2;
+                    }
+
                     //Ориентация листа
                     oDoc.PageSetup.Orientation = Word.WdOrientation.wdOrientLandscape;
                     dynamic oRange = oDoc.Content.Application.Selection.Range;
@@ -192,17 +205,22 @@ namespace Marathon_registration
                     oDoc.Application.Selection.Cells.VerticalAlignment = Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
                     oDoc.Application.Selection.Tables[1].Borders.Enable = 1;
 
-                    //Текст шапки
-                    foreach (Word.Section section in oDoc.Application.ActiveDocument.Sections)
-                    {
-                        Word.Range headerRange = section.Headers[Word.WdHeaderFooterIndex.wdHeaderFooterPrimary].Range;
-                        headerRange.Fields.Add(headerRange, Word.WdFieldType.wdFieldPage);
-                        headerRange.Text = "Список спортсменов";
-                        headerRange.Font.Size = 16;
-                        headerRange.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphCenter;
-                    }
                     oDoc.Application.Application.Selection.Tables[1].Rows[dataGrid.Items.Count+2].Delete();
-                    oDoc.Application.Visible = true;
+
+                    //Add the footers into the document
+                    foreach (Word.Section wordSection in oDoc.Application.ActiveDocument.Sections)
+                    {
+                        //Get the footer range and add the footer details.
+                        Word.Range footerRange = wordSection.Footers[Word.WdHeaderFooterIndex.wdHeaderFooterPrimary].Range;
+                        footerRange.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphCenter;
+                        footerRange.Text = $"Дата формирования: {DateTime.Now:dddd d MMMM yyy}\nКоличество пользователей: {list.Count}";
+                        footerRange.Font.Size = 16;
+                        footerRange.Font.Name = "Open Sans";
+                        footerRange.Font.Bold = 2;
+                    }
+
+                    oDoc.SaveAs(sfd.FileName);
+                    oDoc.Application.Quit();
 
                 }
                 else if (System.IO.Path.GetExtension(sfd.FileName) == ".xlsx") // Полностью готовый вариант.
