@@ -55,7 +55,7 @@ namespace Marathon_registration
                 date = date.AddDays(3);
                 ReplaceWord("{date_2}", $"{date:dddd d MMMM yyy}", wordDocument);
                 ReplaceWord("{sum}", $"{list[index].Birth_Date_Year}0", wordDocument);
-                ReplaceWord("{fio}", $"{list[index].Name} {list[index].Last_Name}", wordDocument);
+                ReplaceWord("{fio}", $"{list[index].Last_Name} {list[index].Name}", wordDocument);
                 ReplaceWord("{email}", list[index].Email, wordDocument);
 
                 wordDocument.SaveAs(sfd.FileName);
