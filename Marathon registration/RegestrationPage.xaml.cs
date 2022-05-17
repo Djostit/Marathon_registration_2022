@@ -116,9 +116,17 @@ namespace Marathon_registration
                     age--;
                 }
                 if (age < 10 || age > 85) { return; }
-                if (age < 50)
+                if (age >= 50)
                 {
                     Color_temp = "#FFF3E916";
+                }
+                else if (age < 20)
+                {
+                    Color_temp = "#FF44EE12";
+                }
+                else if (age >= 20)
+                {
+                    Color_temp = "Transparent";
                 }
             }
             if (Name_runner.Text.Length == 0 || 
@@ -130,7 +138,7 @@ namespace Marathon_registration
                 Country.Text.Length == 0 ||
                 SuperTime.Text.Length == 0) { return; }
             string Photo = string.Empty;
-            this.NavigationService.Navigate(new RegestrationConfirmation());
+            this.NavigationService.Navigate(new RegestrationConfirmation(list.Count));
             if (check)
             {
                 File.Copy(dialog.FileName, $"{System.IO.Path.GetFullPath("User photos/").Replace(@"\bin\Debug\", @"\")}{System.IO.Path.GetFileName(dialog.FileName)}");

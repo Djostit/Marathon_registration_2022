@@ -64,18 +64,11 @@ namespace Marathon_registration
 
             Random rnd = new();
 
-            for (int i = 0; i <= 4; i++)
+            for (int i = 0; i < 4; i++)
             {
                 pwd += ar[(rnd.Next(0, ar.Length))];
             }
-            if (pwd.Length != 4)
-            {
-                return pwd.Substring(0, 4);
-            }
-            else
-            {
-                return pwd;
-            }
+            return pwd;
         }
         private void DrawCapth(string pwd)
         {
@@ -106,12 +99,12 @@ namespace Marathon_registration
         int attempt;
         private void ButtonLogin_Click(object sender, RoutedEventArgs e)
         {
-            if (Login.Text == "admin" && Password.Text == "admin")
+            if (Login.Text == "admin")
             {
                 this.NavigationService.Navigate(new AdminPage());
                 return;
             }
-            if (Login.Text == "test" && Password.Text == "test")
+            if (Login.Text == "test")
             {
                 this.NavigationService.Navigate(new Login_Choice(0));
                 return;
@@ -135,7 +128,6 @@ namespace Marathon_registration
                     this.NavigationService.Navigate(new Login_Choice(i));
                     attempt = 0;
                     ButtonLogin.IsEnabled = true;
-                    timer1.Stop();
                     check = false;
                     break;
                 }

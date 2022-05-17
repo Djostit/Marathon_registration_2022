@@ -130,5 +130,53 @@
     "Photo": "pack://application:,,,/Marathon registration;component/Resources/Photo.png",
     "Birth_Date_Year": 1980,
     "Color": "Transparent"
+  },
+  {
+    "Email": "roma@yandex.ru",
+    "Password": "RoaraT1!",
+    "Name": "Роман",
+    "Last_Name": "Красильников",
+    "Sex": "Мужской",
+    "Birth_Date": "20.04.2004",
+    "Country": "Россия",
+    "Photo": "pack://application:,,,/Marathon registration;component/Resources/Photo.png",
+    "Birth_Date_Year": 2004,
+    "Color": "#FF44EE12"
+  },
+  {
+    "Email": "alina@yandex.ru",
+    "Password": "asdAsd@62",
+    "Name": "Алина",
+    "Last_Name": "Саитова",
+    "Sex": "Женский",
+    "Birth_Date": "19.09.2004",
+    "Country": "Беларусь",
+    "Photo": "pack://application:,,,/Marathon registration;component/Resources/Photo.png",
+    "Birth_Date_Year": 2004,
+    "Color": "#FF44EE12"
+  },
+  {
+    "Email": "asdasd@mail.ru",
+    "Password": "asdasd@mail.r2@sSu",
+    "Name": "asdasd@mail.r2@sSu",
+    "Last_Name": "asdasd@mail.r2@sSu",
+    "Sex": "Мужской",
+    "Birth_Date": "11.01.2001",
+    "Country": "Россия",
+    "Photo": "pack://application:,,,/Marathon registration;component/Resources/Photo.png",
+    "Birth_Date_Year": 2001,
+    "Color": "Transparent"
+  },
+  {
+    "Email": "asdasds@mail.ru",
+    "Password": "asdasd@mail.r2@sSu",
+    "Name": "asdasd@mail.r2@sSu",
+    "Last_Name": "asdasd@mail.r2@sSu",
+    "Sex": "Мужской",
+    "Birth_Date": "20.02.2002",
+    "Country": "Россия",
+    "Photo": "pack://application:,,,/Marathon registration;component/Resources/Photo.png",
+    "Birth_Date_Year": 2002,
+    "Color": "Transparent"
   }
 ]
