@@ -285,9 +285,14 @@ namespace Marathon_registration
                             workSheet.Row(i).Style.Font.Name = "Open Sans Light";
                         }
                         workSheet.Cells["A1:D1"].Style.Border.Bottom.Style = ExcelBorderStyle.Medium;
-                        workSheet.Cells[$"D2:D{list.Count+2}"].Style.Border.Right.Style = ExcelBorderStyle.Medium;
-                        workSheet.Cells[$"A2:A{list.Count+2}"].Style.Border.Left.Style = ExcelBorderStyle.Medium;
+                        workSheet.Cells[$"D2:D{list.Count+ 2}"].Style.Border.Right.Style = ExcelBorderStyle.Medium;
+                        workSheet.Cells[$"A2:A{list.Count + 2}"].Style.Border.Left.Style = ExcelBorderStyle.Medium;
+                        workSheet.Cells[$"A2:A{list.Count + 2}"].Style.Border.Right.Style = ExcelBorderStyle.Medium;
+                        workSheet.Cells[$"B2:B{list.Count + 2}"].Style.Border.Right.Style = ExcelBorderStyle.Medium;
+                        workSheet.Cells[$"C2:C{list.Count + 2}"].Style.Border.Right.Style = ExcelBorderStyle.Medium;
                         workSheet.Cells[$"A{list.Count+2}:D{list.Count+2}"].Style.Border.Bottom.Style = ExcelBorderStyle.Medium;
+                        workSheet.Cells["A2:D2"].Style.Border.Bottom.Style = ExcelBorderStyle.Medium;
+                        workSheet.Cells[$"A3:D{list.Count + 1}"].Style.Border.Bottom.Style = ExcelBorderStyle.Medium;
 
                         workSheet.Cells[$"A{list.Count + 3}:D{list.Count + 3}"].Merge = true;
                         workSheet.Cells[$"A{list.Count + 3}:D{list.Count + 3}"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;

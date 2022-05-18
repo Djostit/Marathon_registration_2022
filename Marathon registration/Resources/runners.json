@@ -154,5 +154,17 @@
     "Photo": "pack://application:,,,/Marathon registration;component/Resources/Photo.png",
     "Birth_Date_Year": 2004,
     "Color": "#FF44EE12"
+  },
+  {
+    "Email": "json@mail.ru",
+    "Password": "asdASD52^",
+    "Name": "Джон",
+    "Last_Name": "Кузнецов",
+    "Sex": "Мужской",
+    "Birth_Date": "10.03.1998",
+    "Country": "Россия",
+    "Photo": "pack://application:,,,/Marathon registration;component/Resources/Photo.png",
+    "Birth_Date_Year": 1998,
+    "Color": "Transparent"
   }
 ]
